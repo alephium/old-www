@@ -1,3 +1,14 @@
 .TitleSection {
 	height: 100vh;
 }
+
+.TitleSection__Splash {
+	height: 50vh;
+	width: 100%;
+	margin-top: 15vh;
+	transform: skewY(-10deg);
+	background-image: url('../../images/milky-way.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
