@@ -1,14 +1,38 @@
 .TitleSection {
 	height: 100vh;
+	display: flex;
+}
+
+.TitleSection__Splash-Container {
+	transform: scale(1) skewY(-10deg);
+	overflow: hidden;
+	width: 80%;
+	height: 60%;
+	transition: ease-in-out 0.2s;
+	border-radius: 25px;
+	margin-right: -25px;
+	margin-left: auto;
+	margin-top: 10vh;
+}
+
+.TitleSection__Splash-Container:hover {
+	transform: scale(1.02) skewY(-10deg);
+	transition: all ease-in-out 0.2s;
 }
 
 .TitleSection__Splash {
-	height: 50vh;
 	width: 100%;
-	margin-top: 15vh;
-	transform: skewY(-10deg);
+	height: 100%;
 	background-image: url('../../images/milky-way.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	filter: blur(0px);
+	transition: ease-in-out 0.2s;
+	transform: scale(1);
+}
+
+.TitleSection__Splash:hover {
+	transition: ease-in-out 0.2s;
+	filter: blur(5px);
+	transform: scale(1.1);
 }
