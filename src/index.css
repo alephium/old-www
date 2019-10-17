@@ -3,13 +3,19 @@
 :root {
 	/* Colors */
 	--alephium-red: #FF3646;
-	--alephium-red--transparent: rgba(#FF3646, 0.2);
+	--alephium-red--light: rgba(255, 54, 71, 0.1);
+
 	--text-color: #171C3D;
+	--text-color--light: #3A3E5A;
+
 	--background-color--light: #F5F6F9;
 	--background-color--dark: #191A22;
 	--grey--dark: #2A2C3A;
+	--grey--light: rgba(23, 28, 61, 0.38);
 	--grey: #41445B;
 	--white: #ffffff;
+
+	font-size: 14px;
 }
 
 body {
@@ -24,6 +30,12 @@ body {
 
 @font-face {
   font-family: 'Poppins';
+	src: local('Poppins Medium'), url('./fonts/Poppins-Medium.otf') format('otf');
+	font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Poppins';
 	src: local('Poppins Semibold'), url('./fonts/Poppins-SemiBold.otf') format('otf');
 	font-weight: 600;
 }
@@ -32,4 +44,27 @@ body {
   font-family: 'Poppins';
 	src: local('Poppins Bold'), url('./fonts/Poppins-Bold.otf') format('otf');
 	font-weight: bold;
+}
+
+button {
+	font-family: 'Poppins';
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+/* paragraphs */
+p {
+	line-height: 1.5rem;
+	color: var(--text-color);
+	text-align: justify;
+}
+
+mark {
+	color: var(--alephium-red);
+	background-color: var(--alephium-red--light);
+	border-radius: 5px;
+	padding: 0 3px 0 3px;
+	font-weight: 600;
 }

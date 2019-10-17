@@ -1,6 +1,6 @@
 .TitleSection {
-	height: 100vh;
-	display: flex;
+	height: 80vh;
+	min-height: 1000px;
 	background-color: var(--background-color--light);
 }
 
@@ -8,12 +8,16 @@
 	transform: scale(1) skewY(-10deg);
 	overflow: hidden;
 	width: 50vw;
-	height: 40vh;
+	height: 38vh;
 	transition: ease-in-out 0.4s;
 	border-radius: 5vh;
 	margin: auto;
 	margin-top: 15vh;
-	max-width: 900px;
+	max-width: 800px;
+	min-width: 300px;
+	margin-bottom: 0;
+	padding: 0 40px 0 20px;
+	min-height: 400px;
 }
 
 .TitleSection__Splash-Container:hover {
@@ -31,7 +35,9 @@
 .TitleSection__Splash__background-image {
 	position: absolute;
 	top: 0; bottom: 0; right: 0; left: 0;
+	background-color: rgba(0, 0, 0, 0.25);
 	background-image: url('../../images/milky-way.jpg');
+	background-blend-mode: darken;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -41,22 +47,115 @@
 	z-index: -1;
 }
 
-.TitleSection__Splash__background-image:hover {
+.TitleSection__Splash:hover > .TitleSection__Splash__background-image {
 	transition: ease-in-out 0.4s;
-	filter: blur(5px);
-	transform: scale(1.5) skewY(10deg);
+	filter: blur(3px);
+	transform: scale(1.35) skewY(10deg);
+}
+
+.TitleSection__Splash:hover .TitleSection__BlockFlow {
+	transform: scale(1.1) skewY(10deg);
+	transition: ease-in-out 0.4s;
 }
 
 .TitleSection__BlockFlow {
 	transform: skewY(10deg);
 	color: var(--white);
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	flex-direction: column;
+	transition: ease-in-out 0.4s;
 }
 
 .TitleSection__BlockFlow__title {
-	font-size: 3rem;
+	font-size: 3.3rem;
 	font-weight: bold;
+}
+
+.TitleSection__BlockFlow__sub-title {
+	font-size: 1.25rem;
+	text-align: left;
+	width: 50%;
+	font-weight: 500;
+	padding: 5 0 5 0;
+}
+
+.TitleSection__BlockFlow__box {
+	margin-top: 30px;
+	font-size: 1.6rem;
+	font-weight: bold;
+	width: 60%;
+	border: 6px solid var(--alephium-red);
+	padding: 8px 16px 16px 8px;
+}
+
+/* Get started */
+
+.TitleSection__GetStarted {
+	position: absolute;
+	left: auto;
+	right: 10vw;
+	top: 35vh;
+	background-color: var(--white);
+	width: 160px;
+	display: flex;
+	flex-direction: column;
+	padding: 25px 40px;
+	border-radius: 35px;
+	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.GetStarted__title__top-label {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: var(--grey--light);
+}
+
+.GetStarted__title__bottom-label {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.TitleSection__button-list {
+	margin-top: 30px;
+}
+
+.TitleSection__button {
+	color: var(--white);
+	font-size: 1rem;
+	font-weight: 500;
+	width: 100%;
+	border: 0;
+	background-color: var(--alephium-red);
+	border-radius: 12px;
+	height: 40px;
+	margin-bottom: 20px;
+	transition: ease-in-out 0.4s;
+}
+
+.TitleSection__button:hover {
+	transform: translateY(-1.5px);
+	transition: ease-in-out 0.2s;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsivness */ 
+
+@media all and (min-width: 1300px) {
+	.TitleSection__GetStarted {
+		right: 20vw;
+	}
+}
+
+@media all and (max-width: 800px) {
+	.TitleSection{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.TitleSection__GetStarted {
+		position: relative;
+		top: -60px; right: 0; left: 0;
+	}
 }

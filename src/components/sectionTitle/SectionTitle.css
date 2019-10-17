@@ -1,0 +1,14 @@
+.SectionTitle {
+	margin-bottom: 40px;
+}
+
+.SectionTitle > label {
+	font-weight: 600;
+	color: var(--grey--light);
+}
+
+.SectionTitle > h1 {
+	font-weight: 600;
+	font-size: 3rem;
+	margin: 0;
+}

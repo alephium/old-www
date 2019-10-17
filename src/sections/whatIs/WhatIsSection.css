@@ -1,4 +1,44 @@
 .WhatIsSection {
-	height: 100vh;
+	background-color: var(--background-color--light);
+	height: 80vh;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.WhatIsSection__description-container {
+	max-width: 600px;
+}
+
+.WhatIsSection__content {
+	display: flex;
+}
+
+.WhatIsSection__content__logo {
+	min-width: 90px;
+	max-width: 130px;
+	min-height: 90px;
+	background-image: url('../../images/logo-in-rounded-box.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 50px;
+	flex: 1;
+}
+
+.WhatIsSection__content__text {
+	min-width: 300px;
+	flex: 1;
+}
+
+@media all and (max-width: 800px) {
+	.WhatIsSection {
+		padding: 0 20px 0 20px;
+	}
+	.WhatIsSection__content {
+		flex-direction: column;
+		align-items: center;
+	}
+	.WhatIsSection__content__logo {
+		margin: 0 0 30px 0;
+	}
 }
