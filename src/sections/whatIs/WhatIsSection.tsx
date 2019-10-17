@@ -20,6 +20,9 @@ const WhatIsSection: React.FC = () => {
 						</p>
 					</div>
 				</div>
+				<div className='WhatIsSection__selling-points'>
+					
+				</div>
 			</div>
 		</section>
 	);

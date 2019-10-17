@@ -1,6 +1,6 @@
 .WhatIsSection {
 	background-color: var(--background-color--light);
-	height: 80vh;
+	height: 90vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -32,13 +32,10 @@
 
 @media all and (max-width: 800px) {
 	.WhatIsSection {
-		padding: 0 20px 0 20px;
+		padding: 0 40px 0 40px;
 	}
-	.WhatIsSection__content {
-		flex-direction: column;
-		align-items: center;
-	}
+
 	.WhatIsSection__content__logo {
-		margin: 0 0 30px 0;
+		display: none;
 	}
 }

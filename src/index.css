@@ -30,19 +30,19 @@ body {
 
 @font-face {
   font-family: 'Poppins';
-	src: local('Poppins Medium'), url('./fonts/Poppins-Medium.otf') format('otf');
+	src: local('Poppins Medium'), url('./fonts/Poppins-Medium.otf') format('opentype');
 	font-weight: 500;
 }
 
 @font-face {
   font-family: 'Poppins';
-	src: local('Poppins Semibold'), url('./fonts/Poppins-SemiBold.otf') format('otf');
+	src: local('Poppins Semibold'), url('./fonts/Poppins-SemiBold.otf') format('opentype');
 	font-weight: 600;
 }
 
 @font-face {
   font-family: 'Poppins';
-	src: local('Poppins Bold'), url('./fonts/Poppins-Bold.otf') format('otf');
+	src: local('Poppins Bold'), url('./fonts/Poppins-Bold.otf') format('opentype');
 	font-weight: bold;
 }
 
@@ -56,15 +56,19 @@ button:hover {
 
 /* paragraphs */
 p {
-	line-height: 1.5rem;
+	line-height: 1.7rem;
 	color: var(--text-color);
 	text-align: justify;
+}
+
+p:first-child {
+	margin-top: 0;
 }
 
 mark {
 	color: var(--alephium-red);
 	background-color: var(--alephium-red--light);
 	border-radius: 5px;
-	padding: 0 3px 0 3px;
+	padding: 0 5px 0 5px;
 	font-weight: 600;
 }

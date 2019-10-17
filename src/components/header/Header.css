@@ -14,3 +14,10 @@
 .Header__logo {
 	width: 150px;
 }
+
+@media all and (max-width: 800px) {
+	.Header {
+		height: 60px;
+		padding: 0 30px 0 30px;
+	}
+}
