@@ -1,38 +1,62 @@
 .TitleSection {
 	height: 100vh;
 	display: flex;
+	background-color: var(--background-color--light);
 }
 
 .TitleSection__Splash-Container {
 	transform: scale(1) skewY(-10deg);
 	overflow: hidden;
-	width: 80%;
-	height: 60%;
-	transition: ease-in-out 0.2s;
-	border-radius: 25px;
-	margin-right: -25px;
-	margin-left: auto;
-	margin-top: 10vh;
+	width: 50vw;
+	height: 40vh;
+	transition: ease-in-out 0.4s;
+	border-radius: 5vh;
+	margin: auto;
+	margin-top: 15vh;
+	max-width: 900px;
 }
 
 .TitleSection__Splash-Container:hover {
 	transform: scale(1.02) skewY(-10deg);
-	transition: all ease-in-out 0.2s;
+	transition: all ease-in-out 0.4s;
 }
 
 .TitleSection__Splash {
-	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 100%;
-	background-image: url('../../images/milky-way.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	filter: blur(0px);
-	transition: ease-in-out 0.2s;
-	transform: scale(1);
 }
 
-.TitleSection__Splash:hover {
-	transition: ease-in-out 0.2s;
+.TitleSection__Splash__background-image {
+	position: absolute;
+	top: 0; bottom: 0; right: 0; left: 0;
+	background-image: url('../../images/milky-way.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: blur(0px);
+	transition: ease-in-out 0.4s;
+	transform: scale(1.3) skewY(10deg);
+	z-index: -1;
+}
+
+.TitleSection__Splash__background-image:hover {
+	transition: ease-in-out 0.4s;
 	filter: blur(5px);
-	transform: scale(1.1);
+	transform: scale(1.5) skewY(10deg);
+}
+
+.TitleSection__BlockFlow {
+	transform: skewY(10deg);
+	color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.TitleSection__BlockFlow__title {
+	font-size: 3rem;
+	font-weight: bold;
 }
