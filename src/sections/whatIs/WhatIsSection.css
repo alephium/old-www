@@ -1,4 +1,5 @@
 .WhatIsSection {
+	flex: 1;
 	background-color: var(--background-color--light);
 	height: 90vh;
 	display: flex;
@@ -30,6 +31,56 @@
 	flex: 1;
 }
 
+/* Selling points */
+.WhatIsSection__selling-points {
+	display: flex;
+	margin: 60px 10vh 60px 10vh;
+}
+
+.SellingPoint {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	padding: 30px;
+	background-color: var(--white);
+	border-radius: 20px;
+	max-width: 170px;
+	min-width: 140px;
+	margin: 0 20px 0 20px;
+
+	transition: ease-in-out 0.2s;
+}
+
+.SellingPoint:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+	transition: ease-in-out 0.2s;
+}
+
+.SellingPoint__image {
+	width: 90px;
+	height: 90px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	margin-bottom: 20px;
+}
+
+.SellingPoint__title {
+	font-weight: 700;
+	font-size: 1.2rem;
+	margin-bottom: 20px;
+}
+
+.SellingPoint__desc {
+	font-size: 0.9rem;
+	color: var(--text-color--light);
+}
+
 @media all and (max-width: 800px) {
 	.WhatIsSection {
 		padding: 0 40px 0 40px;
@@ -37,5 +88,17 @@
 
 	.WhatIsSection__content__logo {
 		display: none;
+	}
+
+	.WhatIsSection__selling-points {
+		display: flex;
+		flex-direction: column;
+		margin-right: 5vw;
+		margin-left: 5vw;
+	}
+
+	.SellingPoint {
+		margin-bottom: 40px;
+		max-width: 230px;
 	}
 }

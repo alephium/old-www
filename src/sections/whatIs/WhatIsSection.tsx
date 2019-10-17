@@ -1,6 +1,9 @@
 import React from 'react';
 import './WhatIsSection.css';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
+import scalabilityIcon from '../../images/icons/scalability-icon.svg'
+import decentralizationIcon from '../../images/icons/decentralization-icon.svg'
+import pragmatismIcon from '../../images/icons/pragmatism-icon.svg'
 
 const WhatIsSection: React.FC = () => {
 	return (
@@ -20,12 +23,30 @@ const WhatIsSection: React.FC = () => {
 						</p>
 					</div>
 				</div>
-				<div className='WhatIsSection__selling-points'>
-					
-				</div>
+			</div>
+			<div className='WhatIsSection__selling-points'>
+				<SellingPoint imagePath={scalabilityIcon} title='Scalability' desc='Innovative sharding algorithm supports cross-shard transactions natively for the first time'/>
+				<SellingPoint imagePath={decentralizationIcon} title='Decentralization' desc='Platform runs in an open, permission-less network securely, like Bitcoin, only vulnerable to 51% attack'/>
+				<SellingPoint imagePath={pragmatismIcon} title='Pragmatism' desc='Viable and efficient solutions for scaling smart contract and for confidential transactions'/>
 			</div>
 		</section>
 	);
+}
+
+interface SellingPointProps {
+	imagePath: string
+	title: string
+	desc: string
+}
+
+const SellingPoint: React.FC<SellingPointProps> = ({ imagePath, title, desc }) => {
+	return (
+		<div className='SellingPoint'>
+			<div className='SellingPoint__image' style={{ backgroundImage: `url(${imagePath})` }}/>
+			<div className='SellingPoint__title'>{title}</div>
+			<div className='SellingPoint__desc'>{desc}</div>
+		</div>
+	)
 }
 
 export default WhatIsSection;
