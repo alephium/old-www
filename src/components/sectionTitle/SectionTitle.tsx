@@ -4,12 +4,13 @@ import './SectionTitle.css';
 interface SectionTitleProps {
 	label: string
 	title: string
+	light?: boolean
 }
 
 
-const SectionTitle: React.FC<SectionTitleProps> = ({label, title}) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({label, title, light}) => {
 	return (
-		<div className='SectionTitle'>
+		<div className={`SectionTitle ${light ? 'light' : ''}`}>
 			<label>{label}</label>
 			<h1>{title}</h1>
 		</div>

@@ -12,3 +12,11 @@
 	font-size: 3rem;
 	margin: 0;
 }
+
+.SectionTitle.light > label {
+	color: var(--text-color--lighter);
+}
+
+.SectionTitle.light > h1 {
+	color: var(--white);
+}

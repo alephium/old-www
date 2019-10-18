@@ -1,13 +1,13 @@
 .TechnologyHeader {
-	background-color: var(--background-color--dark);
-	height: 150px;
+	background-color: var(--background-color--darker);
+	height: 100px;
 	padding: 50px 10vw 50px 10vw;
 	position: relative;
 }
 
 .TechnologyHeader__title {
 	font-size: 3.5rem;
-	color: rgba(255, 255, 255, 0.1);
+	color: rgba(139, 100, 231, 0.274);
 	letter-spacing: 25px;
 	z-index: 10;
 	background: url('../../images/city-night.jpg') no-repeat fixed;

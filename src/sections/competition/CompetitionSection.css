@@ -1,0 +1,71 @@
+.CompetitionSection {
+	background-color: var(--background-color--darker);
+	padding: 0 10vw 100px 10vw;
+	display: flex;
+	flex-direction: column;
+}
+
+.CompetitionSection__table-wrapper {
+	position: relative;
+	overflow-x:scroll;
+	overflow-y:visible;
+	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+	border-radius: 20px;
+	max-width: 900px;
+	margin: 50px auto 50px auto;
+	flex: 1;
+}
+
+.CompetitionSection__table {
+	background-color: var(--background-color--dark);
+	border-radius: 20px;
+	color: var(--text-color--lightest);
+	text-align: center;
+	border-collapse: collapse;
+	box-shadow: inset 0 0 0 2px #4D516A;
+	border-style: hidden;
+	font-size: 0.9rem;
+	width: 100%;
+}
+
+.CompetitionSection__table th, td {
+	padding: 20px;
+}
+
+.CompetitionSection__table th {
+	color: var(--white);
+	position: relative;
+}
+
+.CompetitionSection__table tr {
+	border-bottom: 1px solid var(--grey);
+}
+
+/* Alephium selection */
+
+.CompetitionSection__table th:nth-child(2), td:nth-child(2) {
+	background-color: var(--alephium-red);
+	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid var(--alephium-red);
+	color: var(--white);
+}
+
+.CompetitionSection__table th:nth-child(2)::before {
+	content: '';
+	position: absolute;
+	top: -10px;
+	right: 0;
+	width: 100%;
+	height: 10px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color: var(--alephium-red);
+}
+
+.CompetitionSection__table__logo {
+	height: 20px;
+}
+
+@media all and (max-width: 800px) {
+
+}

@@ -7,9 +7,12 @@
 
 	--text-color: #171C3D;
 	--text-color--light: #6D7083;
+	--text-color--lighter: #9EA0B0;
+	--text-color--lightest: #CECEDC;
 
 	--background-color--light: #F5F6F9;
-	--background-color--dark: #191A22;
+	--background-color--dark: #2A2C3A;
+	--background-color--darker: #191A22;
 	--grey--dark: #2A2C3A;
 	--grey--light: rgba(23, 28, 61, 0.38);
 	--grey: #41445B;
