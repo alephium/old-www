@@ -1,5 +1,5 @@
 import React from 'react';
-import './CompetitionSection.css';
+import './CompetitionSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import logoWhite from '../../images/logo-h--white.svg';
 
@@ -9,62 +9,60 @@ const CompetitionSection: React.FC = () => {
 			<SectionTitle title='Alephium features' label='COMPETITION VS.' light />
 
 			<div className='CompetitionSection__table-wrapper'>
-				<table className='CompetitionSection__table'>
-					<thead>
-						<tr>
-							<th></th>
-							<th>
-								<img src={logoWhite} className='CompetitionSection__table__logo'/>
-							</th>
-							<th>Harmony</th>
-							<th>Zilliqa</th>
-							<th>Ethereum 2.0</th>
-							<th>QuarkChain</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th>Performances</th>
-							<td>High (> 10'000 TPS)</td>
-							<td>Zilliqa</td>
-							<td>Medium</td>
-							<td>N/A</td>
-							<td>High</td>
-						</tr>
-						<tr>
-							<th>Transaction Finality Time</th>
-							<td>Medium</td>
-							<td>Low</td>
-							<td>Medium</td>
-							<td>Medium</td>
-							<td>Medium</td>
-						</tr>
-						<tr>
-							<th>No Need For Beacon Chain</th>
-							<td>Yes</td>
-							<td>No</td>
-							<td>No</td>
-							<td>No</td>
-							<td>No</td>
-						</tr>
-						<tr>
-							<th>Linear Scalability</th>
-							<td>High</td>
-							<td>Medium</td>
-							<td>Low</td>
-							<td>Medium</td>
-							<td>High</td>
-						</tr>
-						<tr>
-							<th>Attack Prevention</th>
-							<td>Maximum (51% attack)</td>
-							<td>Medium</td>
-							<td>Medium</td>
-							<td>Medium</td>
-							<td>Medium</td>
-						</tr>
-					</tbody>
-				</table>
+				<div className='CompetitionSection__table'>
+					<div className='CompetitionSection__table__fixed'>
+						<div className='column'>
+							<div className='cell header'></div>
+							<div className='cell header'>Performances</div>
+							<div className='cell header'>Transaction Finality Time</div>
+							<div className='cell header'>No Need For Beacon Chain</div>
+							<div className='cell header'>Linear Scalability</div>
+							<div className='cell header'>Attack Prevention</div>
+						</div>
+						<div className='column highlighted'>
+							<div className='cell header'><img src={logoWhite} className='CompetitionSection__table__logo'/></div>
+							<div className='cell'>High (> 10'000 TPS)</div>
+							<div className='cell'>Medium</div>
+							<div className='cell'>Yes</div>
+							<div className='cell'>High</div>
+							<div className='cell'>Maximum (51% attack)</div>
+						</div>
+					</div>
+					<div className='CompetitionSection__table__scrollable'>
+						<div className='column'>
+							<div className='cell header'>Harmony</div>
+							<div className='cell'>Medium</div>
+							<div className='cell'>Low</div>
+							<div className='cell'>No</div>
+							<div className='cell'>Medium</div>
+							<div className='cell'>Medium</div>
+						</div>
+						<div className='column'>
+							<div className='cell header'>Zilliqa</div>
+							<div className='cell'>Medium</div>
+							<div className='cell'>Medium</div>
+							<div className='cell'>No</div>
+							<div className='cell'>Low</div>
+							<div className='cell'>Medium</div>
+						</div>
+						<div className='column'>
+							<div className='cell header'>Ethereum 2.0</div>
+							<div className='cell'>N/A</div>
+							<div className='cell'>Medium</div>
+							<div className='cell'>No</div>
+							<div className='cell'>Medium</div>
+							<div className='cell'>Medium</div>
+						</div>
+						<div className='column'>
+							<div className='cell header'>QuarkChain</div>
+							<div className='cell'>High</div>
+							<div className='cell'>Medium</div>
+							<div className='cell'>No</div>
+							<div className='cell'>High</div>
+							<div className='cell'>Medium</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
