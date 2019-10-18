@@ -23,21 +23,21 @@
 	max-width: 1200px;
 
 	background-color: var(--background-color--dark);
-	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
 	border-radius: 20px;
 	color: var(--text-color--lightest);
 	text-align: center;
 	border-collapse: collapse;
-	border: 2px solid #4D516A;
+	border: 2px solid var(--border-color--dark);
 	font-size: 0.9rem;
 	width: 100%;
 	display: flex;
 	position: relative;
-	transition: all ease-in-out 0.6s;
+	transition: all ease-in-out 0.4s;
 
 	&:hover {
-		transform: scale(1.02);
-		box-shadow: 0 25px 30px rgba(0, 0, 0, 0.3);
+		transform: scale(1.01);
+		box-shadow: 0 60px 60px rgba(0, 0, 0, 0.15);
 	}
 
 	.column {
@@ -132,6 +132,14 @@
 		border-right: none;
 		border-left: none;
 		font-size: 0.8rem;
+
+		&:hover {
+			transform: scale(1);
+		}
+
+		.column {
+			background-color: transparent;
+		}
 
 		.cell {
 			padding: 5px;

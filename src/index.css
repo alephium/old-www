@@ -13,6 +13,9 @@
 	--background-color--light: #F5F6F9;
 	--background-color--dark: #2A2C3A;
 	--background-color--darker: #191A22;
+
+	--border-color--dark: #515466;
+
 	--grey--dark: #2A2C3A;
 	--grey--light: rgba(23, 28, 61, 0.38);
 	--grey: #41445B;
@@ -60,7 +63,6 @@ button:hover {
 /* paragraphs */
 p {
 	line-height: 1.7rem;
-	color: var(--text-color);
 	text-align: justify;
 }
 
