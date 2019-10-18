@@ -34,7 +34,7 @@
 /* Selling points */
 .WhatIsSection__selling-points {
 	display: flex;
-	margin: 60px 10vh 60px 10vh;
+	margin: 60px 10vh 100px 10vh;
 }
 
 .SellingPoint {

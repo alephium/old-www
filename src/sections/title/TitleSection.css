@@ -122,20 +122,40 @@
 .TitleSection__button {
 	color: var(--white);
 	font-size: 1rem;
-	font-weight: 500;
+	font-weight: 600;
 	width: 100%;
 	border: 0;
-	background-color: var(--alephium-red);
 	border-radius: 12px;
 	height: 40px;
 	margin-bottom: 20px;
-	transition: ease-in-out 0.4s;
+	transition: all ease-in-out 0.4s;
+	padding: 0;
+	background: var(--alephium-red);
+	overflow: hidden;
 }
 
 .TitleSection__button:hover {
 	transform: translateY(-1.5px);
-	transition: ease-in-out 0.2s;
+	transition: all ease-in-out 0.2s;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+	background-position:100px;
+}
+
+.TitleSection__button:before {
+	background-image: linear-gradient(133deg, rgba(255,54,70,1) 20%, #A700DE 100%);
+	content: "";
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0; left: 0;
+	opacity: 0;
+	width: 100%;
+	z-index: -100;
+	transition: ease-in-out 0.2s;
+}
+
+.TitleSection__button:hover:before {
+	opacity: 0.8;
 }
 
 /* Responsivness */ 
