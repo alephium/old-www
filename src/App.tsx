@@ -9,6 +9,7 @@ import FloatingMenu from './components/floatingMenu/FloatingMenu';
 import TechnologyHeader from './sections/technologyHeader/TechnologyHeader';
 import CompetitionSection from './sections/competition/CompetitionSection';
 import FAQSection from './sections/faq/FAQSection';
+import RoadmapSection from './sections/roadmap/RoadmapSection';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
 			<TechnologyHeader />
 			<CompetitionSection />
 			<FAQSection />
+			<RoadmapSection />
     </div>
   );
 }
