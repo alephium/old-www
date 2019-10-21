@@ -20,7 +20,7 @@ const CompetitionSection: React.FC = () => {
 							<div className='cell header'>Attack Prevention</div>
 						</div>
 						<div className='column highlighted'>
-							<div className='cell header'><img src={logoWhite} className='CompetitionSection__table__logo'/></div>
+							<div className='cell header'><img alt="Alephium Logo" src={logoWhite} className='CompetitionSection__table__logo'/></div>
 							<div className='cell'>High (> 10'000 TPS)</div>
 							<div className='cell'>Medium</div>
 							<div className='cell'>Yes</div>

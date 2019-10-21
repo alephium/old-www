@@ -2,14 +2,14 @@ import React from 'react';
 import './FloatingMenu.css';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
-let yPos: number;
+//let yPos: number;
 
 const FloatingMenu: React.FC = () => {
-	const siteHeight = document.documentElement.scrollHeight;
+	//const siteHeight = document.documentElement.scrollHeight;
 
 	useScrollPosition(({currPos}: {currPos: any}) => {
 		// Move menu fragment
-		yPos = currPos.y;
+		//yPos = currPos.y;
 	});
 
 	return (
