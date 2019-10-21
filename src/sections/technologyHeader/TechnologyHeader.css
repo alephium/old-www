@@ -7,11 +7,12 @@
 
 .TechnologyHeader__title {
 	font-size: 3.5rem;
-	color: rgba(139, 100, 231, 0.274);
+	color: rgba(104, 49, 231, 0.274);
 	letter-spacing: 25px;
 	z-index: 10;
 	background: url('../../images/city-night.jpg') no-repeat fixed;
 	-webkit-background-clip: text;
+	mix-blend-mode: screen;
   -moz-background-clip: text;
   -o-background-clip: text;
   background-clip: text;

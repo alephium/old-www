@@ -1,6 +1,6 @@
 .FAQSection {
 	background-color: var(--background-color--darker);
-	min-height: 100vh;
+	min-height: 80vh;
 	display: flex;
 	flex-direction: column;
 
@@ -38,7 +38,7 @@
 }
 
 .FAQSection__box {
-	height: 25vh;
+	height: 20vh;
 	padding: 30px;
 	background-color: var(--background-color--dark);
 	border: 2px solid var(--border-color--dark);
@@ -81,7 +81,7 @@
 	position: absolute;
 	top: 5vh;
 	right: -5vw;
-	height: 100vh;
+	height: 70vh;
 	width: 70vw;
 	z-index: -1;
 
