@@ -1,22 +1,29 @@
 .SectionTitle {
 	margin-bottom: 40px;
+	display: flex;
+	justify-content: center;
 }
 
-.SectionTitle > label {
+.SectionTitle__content {
+	max-width: 1000px;
+	flex: 1;
+}
+
+.SectionTitle label {
 	font-weight: 600;
 	color: var(--grey--light);
 }
 
-.SectionTitle > h1 {
+.SectionTitle h1 {
 	font-weight: 600;
 	font-size: 3rem;
 	margin: 0;
 }
 
-.SectionTitle.light > label {
+.SectionTitle.light label {
 	color: var(--text-color--lighter);
 }
 
-.SectionTitle.light > h1 {
+.SectionTitle.light h1 {
 	color: var(--white);
 }

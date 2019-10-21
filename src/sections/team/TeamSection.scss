@@ -1,6 +1,7 @@
 .TeamSection {
 	background-image: url(../../images/hills_background.jpg);
 	background-repeat: no-repeat;
+	background-position: center;
 	background-size: cover;
 	min-height: 72vh;
 	display: flex;
@@ -24,4 +25,68 @@
 	width: 100vw;
 	height: 300px;
 	opacity: 0.9;
+}
+
+.TeamSection__container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.TeamSection__team-members {
+		margin: auto;
+		max-width: 1000px;
+	}
+
+	.member-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.TeamMember {
+	max-width: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+
+	margin: 30px;
+
+	.picture__container {
+		height: 80px;
+		width: 70px;
+		border-radius: 10px;
+		transform: skewY(-10deg);
+		overflow: hidden;
+		margin-bottom: 15px;
+		box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+	}
+
+	.picture {
+		height: 100%;
+		width: 100%;
+		background-position: center;
+		background-size: cover;
+		transform: skewY(10deg) scale(1.35);
+	}
+
+	h1 {
+		font-weight: 700;
+		font-size: 1.2rem;
+		margin-bottom: 5px;
+	}
+
+	h2 {
+		font-size: 1rem;
+		font-weight: 500;
+	}
+
+	.desc {
+		line-height: 1.3rem;
+		font-size: 0.8rem;
+	}
 }
