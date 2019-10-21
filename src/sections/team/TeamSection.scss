@@ -43,6 +43,11 @@
 		flex-wrap: wrap;
 		justify-content: center;
 	}
+
+	.team-title {
+		text-align: center;
+		margin-top: 30px;
+	}
 }
 
 .TeamMember {
@@ -54,7 +59,7 @@
 
 	text-align: center;
 
-	margin: 30px;
+	margin: 28px;
 
 	.picture__container {
 		height: 80px;
@@ -74,13 +79,13 @@
 		transform: skewY(10deg) scale(1.35);
 	}
 
-	h1 {
+	h2 {
 		font-weight: 700;
 		font-size: 1.2rem;
 		margin-bottom: 5px;
 	}
 
-	h2 {
+	h3 {
 		font-size: 1rem;
 		font-weight: 500;
 	}

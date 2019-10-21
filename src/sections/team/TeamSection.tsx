@@ -48,6 +48,9 @@ const TeamSection: React.FC = () => {
 						desc='Vice-president of Blockchain Association of Tsinghua Students'
 					/>
 					</div>
+					<div className='TeamSection__teams-separator'>
+						<h1 className='team-title'>Advisors</h1>
+					</div>
 					<div className='TeamSection__advisors member-grid'>
 						<TeamMember
 							pictureUrl={casey}
@@ -86,8 +89,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({ pictureUrl, name, role, desc })
 			<div className='picture__container'>
 				<div className='picture' style={{ backgroundImage: `url(${pictureUrl})`}} />
 			</div>
-			<h1 className='name'>{name}</h1>
-			<h2 className='role'>{role}</h2>
+			<h2 className='name'>{name}</h2>
+			<h3 className='role'>{role}</h3>
 			<div className='desc'>{desc}</div>
 		</div>
 	)
