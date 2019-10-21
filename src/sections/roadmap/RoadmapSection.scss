@@ -1,8 +1,9 @@
 .RoadmapSection {
 	background-color: var(--background-color--darker);
-	min-height: 100vh;
+	min-height: 60vh;
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 5vh;
 
 	.SectionTitle {
 		margin-top: 50px;
@@ -10,4 +11,144 @@
 	}
 	position: relative;
 	z-index: -2;
+}
+
+.Roadmap__container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	justify-content: center;
+}
+
+.Roadmap {
+	margin-top: 2vh;
+}
+
+.Roadmap__line {
+	height: 100%;
+	position: absolute;
+	width: 2px;
+	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 15%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.8) 85%, rgba(255,255,255,0) 100%);
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	z-index: -1;
+}
+
+.RoadmapStep {
+	flex: 1;
+	display: flex;
+	margin-bottom: 2vh;
+
+	&.right {
+		flex-flow: row-reverse;
+
+		.number-box {
+			margin-left: -17px;
+		}
+
+		.content {
+			flex-flow: row-reverse;
+		}
+	}
+
+	&.left {
+		.number-box {
+			margin-right: -17px;
+		}
+	}
+
+	.content {
+		flex: 1;
+		display: flex;
+		justify-content: flex-end;
+
+		.box {
+			background-color: var(--background-color--dark);
+			border: 2px solid var(--border-color--dark);
+			border-radius: 15px;
+			padding: 20px;
+			width: 25vw;
+			max-width: 250px;
+			box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+		}
+
+		.link {
+			margin-top: 20px;
+			border-top: dotted 2px var(--border-color--dark);
+			width: 30px;
+		}
+
+		.number-box {
+			height: 40px;
+			width: 34px;
+			background-color: var(--white);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transform: skewY(-10deg);
+			border-radius: 7px;
+			position: relative;
+
+			.number {
+				transform: skewY(10deg);
+				font-weight: 600;
+			}
+
+			.notification-bubble {
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				position: absolute;
+				top: -5px;
+				right: -5px;
+				transform: skewY(10deg);
+				display: flex;
+
+				.notification-bubble__icon {
+					flex: 1;
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: contain;
+					margin: 3px;
+				}
+
+				&.done {
+					background-color: #11E388;
+
+					.notification-bubble__icon {
+						background-image: url('../../images/icons/checkmark.svg');
+					}
+				}
+
+				&.highlight {
+					background-color: var(--alephium-red);
+
+					.notification-bubble__icon {
+						background-image: url('../../images/icons/star.svg');
+					}
+				}
+			}
+		}
+	}
+
+	h1 {
+		color: var(--white);
+		font-size: 1.3rem;
+		margin: 0;
+		margin-bottom: 10px;
+	}
+
+	p {
+		color: var(--text-color--lighter);
+		margin: 0;
+		font-size: 0.9rem;
+		line-height: 1.3rem;
+		text-align: left;
+	}
+
+	.free-space {
+		flex: 1;
+	}
 }

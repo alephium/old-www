@@ -1,8 +1,9 @@
 .FAQSection {
 	background-color: var(--background-color--darker);
-	min-height: 80vh;
+	min-height: 72vh;
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 5vh;
 
 	.SectionTitle {
 		margin-top: 50px;
