@@ -15,7 +15,7 @@ const RoadmapSection: React.FC = () => {
 						title='2018 Q2 - Q4 '
 						done
 					>
-						The Alpha version including the core BlockFlow algorithm was implemented. Alpha version tested on AWS achieving > 10K TPS
+						The Alpha version including the core BlockFlow algorithm was implemented. <a href='https://www.youtube.com/watch?v=lasTOXkMr1k'>Alpha version tested on AWS achieving > 10K TPS</a>
 					</RoadmapStep>
 					<RoadmapStep 
 						side={Side.right}

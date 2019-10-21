@@ -20,9 +20,9 @@ const TitleSection: React.FC = () => {
 					<div className='GetStarted__title__bottom-label'>Started</div>
 				</div>
 				<div className='TitleSection__button-list'>
-					<button className='TitleSection__button'>Technical paper</button>
-					<button className='TitleSection__button'>One pager</button>
-					<button className='TitleSection__button'>Source repository</button>
+					<a href="https://www.alephium.org/docs/white-paper.pdf"><button className='TitleSection__button'>Technical paper</button></a>
+					<a href="https://www.alephium.org/docs/Onepage.pdf"><button className='TitleSection__button'>One pager</button></a>
+					<a href="https://github.com/alephium"><button className='TitleSection__button'>Source repository</button></a>
 				</div>
 			</div>
 		</section>
