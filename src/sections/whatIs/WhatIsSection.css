@@ -7,6 +7,11 @@
 	align-items: center;
 }
 
+.WhatIsSection .SectionTitle {
+	margin-top: 20px;
+	padding: 0;
+}
+
 .WhatIsSection__description-container {
 	max-width: 600px;
 }

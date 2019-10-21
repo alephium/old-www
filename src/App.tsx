@@ -11,6 +11,7 @@ import CompetitionSection from './sections/competition/CompetitionSection';
 import FAQSection from './sections/faq/FAQSection';
 import RoadmapSection from './sections/roadmap/RoadmapSection';
 import TeamSection from './sections/team/TeamSection';
+import NewsSection from './sections/news/NewsSection';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
 			<FAQSection />
 			<RoadmapSection />
 			<TeamSection />
+			<NewsSection />
     </div>
   );
 }

@@ -14,33 +14,33 @@ const RoadmapSection: React.FC = () => {
 			<div className='Roadmap__container'>
 				<div className='Roadmap__line' />
 				<div className='Roadmap'>
-					<RoadmapStep 
+					<RoadmapStep
 						side={Side.left}
 						stepNumber={1}
-						title='2018 Q2 - Q4 '
+						title='2018 Q2 - Q4'
 						done
 					>
 						The Alpha version including the core BlockFlow algorithm was implemented. <a href='https://www.youtube.com/watch?v=lasTOXkMr1k'>Alpha version tested on AWS achieving > 10K TPS</a>
 					</RoadmapStep>
-					<RoadmapStep 
+					<RoadmapStep
 						side={Side.right}
 						stepNumber={2}
-						title='2019 Q1 - Q3 '
 						done
+						title='2019 Q1 - Q3'
 					>
 						Alephium's testnet 1.0 will be released with beta applications for participants.
 					</RoadmapStep>
-					<RoadmapStep 
+					<RoadmapStep
 						side={Side.left}
 						stepNumber={3}
-						title='2019 Q4 - 2020 Q1 '
+						title='2019 Q4 - 2020 Q1'
 					>
 						The testnet would be further enhanced with performance, security, and protocol improments.
 					</RoadmapStep>
-					<RoadmapStep 
+					<RoadmapStep
 						side={Side.right}
 						stepNumber={4}
-						title='After Pre-A Funding '
+						title='After Pre-A Funding'
 						highlight
 					>
 						The initial <mark>main net</mark> will be released.
