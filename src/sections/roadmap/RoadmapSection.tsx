@@ -2,6 +2,11 @@ import React from 'react'
 import './RoadmapSection.scss'
 import SectionTitle from '../../components/sectionTitle/SectionTitle'
 
+enum Side {
+	left = 1,
+	right = 2,
+}
+
 const RoadmapSection: React.FC = () => {
 	return (
 		<section className='RoadmapSection'>
@@ -44,11 +49,6 @@ const RoadmapSection: React.FC = () => {
 			</div>
 		</section>
 	)
-}
-
-enum Side {
-	left = 1,
-	right = 2,
 }
 
 interface RoadmapStepProps {

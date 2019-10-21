@@ -84,7 +84,7 @@ mark {
 p a, span a {
 	color: inherit;
 	text-decoration: none;
-	background-image: linear-gradient(left, #FF8746 0%, #C400A1 100%);
+	background-image: linear-gradient(to left, #FF8746 0%, #C400A1 100%);
 	background-position: 0% 100%;
 	background-repeat: no-repeat;
 	background-size: 100% 1px;
