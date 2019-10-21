@@ -3,7 +3,7 @@
 	min-height: 60vh;
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 5vh;
+	padding-bottom: 6vh;
 
 	.SectionTitle {
 		margin-top: 50px;
@@ -22,7 +22,7 @@
 }
 
 .Roadmap {
-	margin-top: 2vh;
+	margin-top: 3vh;
 }
 
 .Roadmap__line {
@@ -39,7 +39,7 @@
 .RoadmapStep {
 	flex: 1;
 	display: flex;
-	margin-bottom: 2vh;
+	margin-bottom: 3vh;
 
 	&.right {
 		flex-flow: row-reverse;

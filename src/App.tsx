@@ -10,6 +10,7 @@ import TechnologyHeader from './sections/technologyHeader/TechnologyHeader';
 import CompetitionSection from './sections/competition/CompetitionSection';
 import FAQSection from './sections/faq/FAQSection';
 import RoadmapSection from './sections/roadmap/RoadmapSection';
+import TeamSection from './sections/team/TeamSection';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
 			<CompetitionSection />
 			<FAQSection />
 			<RoadmapSection />
+			<TeamSection />
     </div>
   );
 }

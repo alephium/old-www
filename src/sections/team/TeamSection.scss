@@ -1,0 +1,27 @@
+.TeamSection {
+	background-image: url(../../images/hills_background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 72vh;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 5vh;
+
+	.SectionTitle {
+		margin-top: 50px;
+		padding: 0 20vw 0px 20vw;
+	}
+	position: relative;
+}
+
+.TeamSection__bottom-image {
+	position: absolute;
+	bottom: 0;
+	background-image: url(../../images/china-swiss.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
+	height: 300px;
+	opacity: 0.9;
+}

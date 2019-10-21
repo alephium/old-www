@@ -20,7 +20,7 @@ const RoadmapSection: React.FC = () => {
 					<RoadmapStep 
 						side={Side.right}
 						stepNumber={2}
-						title='2018 Q2 - Q4 '
+						title='2019 Q1 - Q3 '
 						done
 					>
 						Alephium's testnet 1.0 will be released with beta applications for participants.
@@ -28,7 +28,7 @@ const RoadmapSection: React.FC = () => {
 					<RoadmapStep 
 						side={Side.left}
 						stepNumber={3}
-						title='2018 Q2 - Q4 '
+						title='2019 Q4 - 2020 Q1 '
 					>
 						The testnet would be further enhanced with performance, security, and protocol improments.
 					</RoadmapStep>
