@@ -105,13 +105,14 @@
 				right: -8px;
 				transform: skewY(10deg);
 				display: flex;
+				justify-content: center;
+				align-items: center;
 
 				.notification-bubble__icon {
-					flex: 1;
+					height: 12px;
+					width: 12px;
 					background-repeat: no-repeat;
 					background-position: center;
-					background-size: contain;
-					margin: 3px;
 				}
 
 				&.done {
