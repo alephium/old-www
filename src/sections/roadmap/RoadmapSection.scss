@@ -97,12 +97,12 @@
 			}
 
 			.notification-bubble {
-				width: 15px;
-				height: 15px;
+				width: 20px;
+				height: 20px;
 				border-radius: 50%;
 				position: absolute;
-				top: -5px;
-				right: -5px;
+				top: -8px;
+				right: -8px;
 				transform: skewY(10deg);
 				display: flex;
 

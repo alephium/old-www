@@ -20,10 +20,6 @@
 	min-height: 400px;
 }
 
-.TitleSection__Splash-Container:hover {
-	transform: scale(1.02) skewY(-10deg);
-	transition: all ease-in-out 0.4s;
-}
 
 .TitleSection__Splash {
 	display: flex;
@@ -41,29 +37,15 @@
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	filter: blur(0px);
-	transition: ease-in-out 0.4s;
-	transform: scale(1.5) skewY(10deg);
 	z-index: -1;
 }
 
-.TitleSection__Splash:hover > .TitleSection__Splash__background-image {
-	transition: ease-in-out 0.4s;
-	filter: blur(3px);
-	transform: scale(1.6) skewY(10deg);
-}
-
-.TitleSection__Splash:hover .TitleSection__BlockFlow {
-	transform: scale(1.1) skewY(10deg);
-	transition: ease-in-out 0.4s;
-}
 
 .TitleSection__BlockFlow {
 	transform: skewY(10deg);
 	color: var(--white);
 	display: flex;
 	flex-direction: column;
-	transition: ease-in-out 0.4s;
 }
 
 .TitleSection__BlockFlow__title {
@@ -157,7 +139,7 @@
 	opacity: 1;
 }
 
-/* Responsivness */ 
+/* Responsivness */
 
 @media all and (min-width: 1300px) {
 	.TitleSection__GetStarted {
