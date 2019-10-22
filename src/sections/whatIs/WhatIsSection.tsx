@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import './WhatIsSection.css';
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from 'react-intersection-observer'
 
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
@@ -32,19 +32,16 @@ const item = {
 const WhatIsSection: React.FC = () => {
 
 	const [sellingPointsContainerRef, inView] = useInView({
-		rootMargin: '-100px 0px',
+		rootMargin: '-300px 0px',
 		triggerOnce: true
 	})
+
+	const controls = useAnimation()
 
 	let sellingPoints : ReactElement = <div className='WhatIsSection__selling-points'/>
 
 	if (inView) {
-		sellingPoints =
-			<motion.div className='WhatIsSection__selling-points' variants={container} initial="hidden" animate="visible">
-				<SellingPoint key={1} imagePath={scalabilityIcon} title='Scalability' desc='Innovative sharding algorithm supports cross-shard transactions natively for the first time'/>
-				<SellingPoint key={2} imagePath={decentralizationIcon} title='Decentralization' desc='Platform runs in an open, permission-less network securely, like Bitcoin, only vulnerable to 51% attack'/>
-				<SellingPoint key={3} imagePath={pragmatismIcon} title='Pragmatism' desc='Viable and efficient solutions for scaling smart contract and for confidential transactions'/>
-			</motion.div>
+		controls.start("visible")
 	}
 
 	return (
@@ -66,7 +63,11 @@ const WhatIsSection: React.FC = () => {
 				</div>
 			</div>
 			<div className='WhatIsSection__selling-points__container' ref={sellingPointsContainerRef}>
-				{sellingPoints}
+				<motion.div className='WhatIsSection__selling-points' variants={container} initial="hidden" animate={controls}>
+					<SellingPoint key={1} imagePath={scalabilityIcon} title='Scalability' desc='Innovative sharding algorithm supports cross-shard transactions natively for the first time'/>
+					<SellingPoint key={2} imagePath={decentralizationIcon} title='Decentralization' desc='Platform runs in an open, permission-less network securely, like Bitcoin, only vulnerable to 51% attack'/>
+					<SellingPoint key={3} imagePath={pragmatismIcon} title='Pragmatism' desc='Viable and efficient solutions for scaling smart contract and for confidential transactions'/>
+				</motion.div>
 			</div>
 		</section>
 	);
