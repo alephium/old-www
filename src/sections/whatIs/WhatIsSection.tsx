@@ -32,13 +32,11 @@ const item = {
 const WhatIsSection: React.FC = () => {
 
 	const [sellingPointsContainerRef, inView] = useInView({
-		rootMargin: '-300px 0px',
+		rootMargin: '-100px 0px',
 		triggerOnce: true
 	})
 
 	const controls = useAnimation()
-
-	let sellingPoints : ReactElement = <div className='WhatIsSection__selling-points'/>
 
 	if (inView) {
 		controls.start("visible")
@@ -82,7 +80,7 @@ interface SellingPointProps {
 
 const SellingPoint: React.FC<SellingPointProps> = ({ imagePath, title, desc }) => {
 	return (
-		<motion.div className='SellingPoint' variants={item}>
+		<motion.div className='SellingPoint' variants={item} whileHover={{ y: -3, boxShadow: '0 15px 25px rgba(0, 0, 0, 0.08)' }} transition={{ ease: "easeOut", duration: .2 }}>
 			<div className='SellingPoint__image' style={{ backgroundImage: `url(${imagePath})` }}/>
 			<div className='SellingPoint__title'>{title}</div>
 			<div className='SellingPoint__desc'>{desc}</div>

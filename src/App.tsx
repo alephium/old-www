@@ -15,18 +15,20 @@ import NewsSection from './sections/news/NewsSection';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <Header />
-			<FloatingMenu />
-			<TitleSection />
-			<WhatIsSection />
-			<TechnologyHeader />
-			<CompetitionSection />
-			<FAQSection />
-			<RoadmapSection />
-			<TeamSection />
-			<NewsSection />
-    </div>
+		<React.StrictMode>
+			<div className="App">
+				<Header />
+				<FloatingMenu />
+				<TitleSection />
+				<WhatIsSection />
+				<TechnologyHeader />
+				<CompetitionSection />
+				<FAQSection />
+				<RoadmapSection />
+				<TeamSection />
+				<NewsSection />
+			</div>
+		</React.StrictMode>
   );
 }
 
