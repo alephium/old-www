@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { SectionProps } from '../../App';
 import './NewsSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import edcon from '../../images/news/edcon.jpg'
@@ -6,9 +7,9 @@ import yahoo from '../../images/news/yahoo.jpg'
 import ethCC from '../../images/news/ethcc.jpg'
 
 
-const NewsSection: React.FC = () => {
+const NewsSection: React.FC<SectionProps> = ({ sectionEl }) => {
 	return (
-		<section className='NewsSection'>
+		<section className='NewsSection' ref={sectionEl} id="news">
 			<SectionTitle title='News' label='MOVING FAST' />
 			<div className='NewsSection__container'>
 				<div className='NewsSection__news-items'>

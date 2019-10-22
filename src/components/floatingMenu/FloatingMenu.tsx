@@ -1,26 +1,28 @@
 import React from 'react';
-import './FloatingMenu.css';
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import './FloatingMenu.css'
+import { motion } from 'framer-motion'
 
 //let yPos: number;
 
-const FloatingMenu: React.FC = () => {
+interface FloatingMenuProps {
+	activeSectionIndex: number
+	onMenuItemClick: (index: number) => void
+}
+
+const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex = 0, onMenuItemClick }) => {
 	//const siteHeight = document.documentElement.scrollHeight;
-
-	useScrollPosition(({currPos}: {currPos: any}) => {
-		// Move menu fragment
-		//yPos = currPos.y;
-	});
-
 	return (
 		<menu className='FloatingMenu'>
-			<div className='FloatingMenu__ActiveFragment' />
+			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{y: activeSectionIndex * 24}}>
+				<div className='FloatingMenu__ActiveFragment' />
+			</motion.div>
 			<ul>
-				<li>Tech</li>
-				<li>FAQ</li>
-				<li>Roadmap</li>
-				<li>Team</li>
-				<li>News</li>
+				<li onClick={() => onMenuItemClick(0)}>Intro</li>
+				<li onClick={() => onMenuItemClick(1)}>Features</li>
+				<li onClick={() => onMenuItemClick(2)}>FAQ</li>
+				<li onClick={() => onMenuItemClick(3)}>Roadmap</li>
+				<li onClick={() => onMenuItemClick(4)}>Team</li>
+				<li onClick={() => onMenuItemClick(5)}>News</li>
 			</ul>
 		</menu>
 	);

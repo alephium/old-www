@@ -1,10 +1,11 @@
 import React from 'react';
 import './FAQSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
+import { SectionProps } from '../../App';
 
-const FAQSection: React.FC = () => {
+const FAQSection : React.FC<SectionProps> = ({sectionEl}) => {
 	return (
-		<section className='FAQSection'>
+		<section className='FAQSection' ref={sectionEl} id="faq">
 			<SectionTitle title='FAQ' label='KNOW EVERYTHING' light />
 			<div className='FAQSection__content_wrapper'>
 				<div className='FAQSection__content'>

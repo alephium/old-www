@@ -4,7 +4,7 @@ import logo from '../../images/logo-h.svg';
 import { motion, useViewportScroll } from 'framer-motion';
 
 const headerVariants = {
-  wide: { width: '100%', borderBottomRightRadius: 0, boxShadow: '0', height: 60 },
+  wide: { width: '100%', borderBottomRightRadius: 0, boxShadow: '0 0 0 rgba(0, 0, 0, 0.05)', height: 60 },
   small: { width: '210px', borderBottomRightRadius: 20, boxShadow: '0 15px 15px rgba(0, 0, 0, 0.05)', height: 50},
 }
 

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import './WhatIsSection.css';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from 'react-intersection-observer'
@@ -7,6 +7,7 @@ import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import scalabilityIcon from '../../images/icons/scalability-icon.svg'
 import decentralizationIcon from '../../images/icons/decentralization-icon.svg'
 import pragmatismIcon from '../../images/icons/pragmatism-icon.svg'
+import { SectionProps } from '../../App';
 
 const container = {
 	hidden: {
@@ -29,7 +30,7 @@ const item = {
   }
 };
 
-const WhatIsSection: React.FC = () => {
+const WhatIsSection: React.FC<SectionProps> = ({ sectionEl }) => {
 
 	const [sellingPointsContainerRef, inView] = useInView({
 		rootMargin: '-100px 0px',
@@ -43,7 +44,7 @@ const WhatIsSection: React.FC = () => {
 	}
 
 	return (
-		<section className='WhatIsSection'>
+		<section className='WhatIsSection' ref={sectionEl} id="intro">
 			<div className='WhatIsSection__description-container'>
 				<SectionTitle label='WHAT IS' title='Alephium?' />
 				<div className='WhatIsSection__content'>

@@ -1,11 +1,12 @@
 import React from 'react';
 import './CompetitionSection.scss';
+import { SectionProps } from '../../App';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import logoWhite from '../../images/logo-h--white.svg';
 
-const CompetitionSection: React.FC = () => {
+const CompetitionSection: React.FC<SectionProps> = ({ sectionEl }) => {
 	return (
-		<section className='CompetitionSection'>
+		<section className='CompetitionSection' ref={sectionEl} id="features">
 			<SectionTitle title='Alephium features' label='COMPETITION VS.' light />
 
 			<div className='CompetitionSection__table-wrapper'>

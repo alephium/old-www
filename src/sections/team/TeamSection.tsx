@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { SectionProps } from '../../App';
 import './TeamSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import cheng from '../../images/team/cheng.jpeg'
@@ -11,9 +12,9 @@ import johannes from '../../images/team/johannes.png'
 import pengL from '../../images/team/peng.png'
 
 
-const TeamSection: React.FC = () => {
+const TeamSection: React.FC<SectionProps> = ({ sectionEl }) => {
 	return (
-		<section className='TeamSection'>
+		<section className='TeamSection' ref={ sectionEl } id="team">
 			<SectionTitle title='Team' label='OUR TALENTED' />
 			<div className='TeamSection__container'>
 				<div className='TeamSection__team-members member-grid'>

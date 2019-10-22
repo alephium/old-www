@@ -1,13 +1,13 @@
 .FloatingMenu {
 	position: fixed;
 	left: 0;
-	top: 150px;
+	top: 110px;
 	/* display: flex; */
 	flex-direction: column;
 	font-weight: 600;
 	font-size: 1rem;
 	padding: 0 0 0 10px;
-	margin: 0 0 0 50px;
+	margin: 0 0 0 40px;
 	z-index: 1000;
 }
 
@@ -28,15 +28,19 @@
 	cursor: pointer;
 }
 
+.FloatingMenu__ActiveFragment__container {
+	position: absolute;
+	left: -16px;
+	top: 2px;
+}
+
+
 .FloatingMenu__ActiveFragment {
 	height: 10px;
 	width: 9px;
 	background-color: #FF4957;
 	transform: skewY(-10deg);
 	border-radius: 3px;
-	position: absolute;
-	left: -16px;
-	top: 2px;
 }
 
 @media all and (max-width: 800px) {
