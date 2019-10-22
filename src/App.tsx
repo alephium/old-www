@@ -18,7 +18,7 @@ export interface SectionProps {
 	sectionEl: InViewHookResponse[0]
 }
 
-let previousActiveSectionIndex : number = -1;
+let previousActiveSectionIndex : number = 0;
 const useInViewParams = {
 	threshold: 0.5
 }
@@ -59,6 +59,7 @@ const App = () => {
 	if (activeSectionIndex !== index)
 	{
 		setActiveSectionIndex(index)
+		previousActiveSectionIndex = index
 	}
 
 	// On menu click, scroll to element

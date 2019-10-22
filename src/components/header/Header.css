@@ -1,6 +1,6 @@
 .Header {
 	display: flex;
-	align-items: center;
+	align-items: start;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -13,5 +13,6 @@
 .Header__logo {
 	width: 130px;
 	height: 40px;
+	margin-top: 10px;
 	margin-left: 50px;
 }

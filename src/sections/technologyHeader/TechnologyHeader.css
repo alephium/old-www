@@ -1,14 +1,24 @@
 .TechnologyHeader {
 	background-color: var(--background-color--darker);
 	height: 100px;
-	padding: 80px 20vw 60px 20vw;
+	padding: 80px 0 60px 0;
+	width: 100%;
 	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.TechnologyHeader__title__container {
+	flex: 1;
+	max-width: 900px;
+	text-align: center;
 }
 
 .TechnologyHeader__title {
 	font-size: 3.5rem;
 	color: rgba(104, 49, 231, 0.274);
 	letter-spacing: 25px;
+	margin-right: -25px;
 	z-index: 10;
 	background: url('../../images/city-night.jpg') no-repeat fixed;
 	-webkit-background-clip: text;

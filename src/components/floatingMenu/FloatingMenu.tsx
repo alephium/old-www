@@ -23,7 +23,7 @@ const sections: Array<MenuItem> = [
 	{ id: 5, name: "News" },
 ]
 
-const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex = 0, onMenuItemClick }) => {
+const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuItemClick }) => {
 	//const siteHeight = document.documentElement.scrollHeight;
 	return (
 		<menu className='FloatingMenu'>
@@ -32,7 +32,7 @@ const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex = 0, onM
 			</motion.div>
 			<ul>
 				{ sections.map((section: MenuItem) => {
-					return <li className={section.id == activeSectionIndex ? 'active' : ''} onClick={() => onMenuItemClick(section.id)}>{section.name}</li>
+					return <li key={section.id} className={section.id === activeSectionIndex ? 'active' : ''} onClick={() => onMenuItemClick(section.id)}>{section.name}</li>
 				}) }
 			</ul>
 		</menu>
