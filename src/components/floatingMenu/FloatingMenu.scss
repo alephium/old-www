@@ -9,23 +9,30 @@
 	padding: 0 0 0 10px;
 	margin: 0 0 0 40px;
 	z-index: 1000;
-}
 
-.FloatingMenu > ul {
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-}
 
-.FloatingMenu li {
-	color: var(--text-color);
-	transition: ease-in-out 0.2s;
-	margin-bottom: 10px;
-}
 
-.FloatingMenu li:hover {
-	color: #FF4957;
-	cursor: pointer;
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	li {
+		color: var(--text-color--light);
+		transition: ease-in-out 0.2s;
+		margin-bottom: 10px;
+
+		&:hover {
+			color: #FF4957;
+			cursor: pointer;
+		}
+
+		&.active {
+			color: #FF4957;
+			font-weight: 800;
+		}
+	}
 }
 
 .FloatingMenu__ActiveFragment__container {
@@ -33,7 +40,6 @@
 	left: -16px;
 	top: 2px;
 }
-
 
 .FloatingMenu__ActiveFragment {
 	height: 10px;

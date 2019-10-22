@@ -1,5 +1,5 @@
 import React from 'react';
-import './FloatingMenu.css'
+import './FloatingMenu.scss'
 import { motion } from 'framer-motion'
 
 //let yPos: number;
@@ -9,6 +9,20 @@ interface FloatingMenuProps {
 	onMenuItemClick: (index: number) => void
 }
 
+interface MenuItem {
+	id: number
+	name: string
+}
+
+const sections: Array<MenuItem> = [
+	{ id: 0, name: "Intro" },
+	{ id: 1, name: "Features" },
+	{ id: 2, name: "FAQ" },
+	{ id: 3, name: "Roadmap" },
+	{ id: 4, name: "Team" },
+	{ id: 5, name: "News" },
+]
+
 const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex = 0, onMenuItemClick }) => {
 	//const siteHeight = document.documentElement.scrollHeight;
 	return (
@@ -17,12 +31,9 @@ const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex = 0, onM
 				<div className='FloatingMenu__ActiveFragment' />
 			</motion.div>
 			<ul>
-				<li onClick={() => onMenuItemClick(0)}>Intro</li>
-				<li onClick={() => onMenuItemClick(1)}>Features</li>
-				<li onClick={() => onMenuItemClick(2)}>FAQ</li>
-				<li onClick={() => onMenuItemClick(3)}>Roadmap</li>
-				<li onClick={() => onMenuItemClick(4)}>Team</li>
-				<li onClick={() => onMenuItemClick(5)}>News</li>
+				{ sections.map((section: MenuItem) => {
+					return <li className={section.id == activeSectionIndex ? 'active' : ''} onClick={() => onMenuItemClick(section.id)}>{section.name}</li>
+				}) }
 			</ul>
 		</menu>
 	);
