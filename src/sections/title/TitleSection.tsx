@@ -1,5 +1,5 @@
 import React, { useState, useRef, useLayoutEffect, MouseEvent } from 'react';
-import './TitleSection.css';
+import './TitleSection.scss';
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper';
 
@@ -28,6 +28,11 @@ const TitleSection = () => {
 
 	return (
 		<section className='TitleSection'>
+			<div className='TitleSection__background-fragments'>
+				<ParallaxWrapper className='TitleSection__background-fragment fragment1' movingSpeed={1} style={{ skewY: '-10deg'}}/>
+				<ParallaxWrapper className='TitleSection__background-fragment fragment2' movingSpeed={0.8} style={{ skewY: '10deg'}} />
+				<ParallaxWrapper className='TitleSection__background-fragment fragment3' movingSpeed={0.6} style={{ skewY: '-10deg'}} />
+			</div>
 			<div className='TitleSection__Splash-Container'>
 				<div className='TitleSection__Splash'>
 					<ParallaxWrapper className='TitleSection__BlockFlow' movingSpeed={0.2} style={{ skewY: "10deg"}}>

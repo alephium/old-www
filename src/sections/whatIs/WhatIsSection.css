@@ -1,9 +1,9 @@
 .WhatIsSection {
 	flex: 1;
-	background-color: var(--background-color--light);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	z-index: 1;
 }
 
 .WhatIsSection .SectionTitle {
