@@ -1,3 +1,12 @@
+.Header__event-zone {
+	position: fixed;
+	width: 250px;
+	height: 350px;
+	top: 0;
+	left: 0;
+	z-index: 800;
+}
+
 .Header {
 	display: flex;
 	align-items: flex-start;
@@ -5,7 +14,7 @@
 	top: 0;
 	right: 0;
 	left: 0;
-	z-index: 1000;
+	z-index: 800;
 	background-color: var(--white);
 	overflow: hidden;
 }

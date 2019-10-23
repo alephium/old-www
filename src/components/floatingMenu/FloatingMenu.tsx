@@ -5,7 +5,7 @@ import { useGlobalStateValue, headerStates } from '../../store/state';
 
 const menuVariants = {
 	hidden: {
-		x: "-80%"
+		x: "-100%"
 	},
 	visible: {
 		x: 0
@@ -34,7 +34,7 @@ const sections: Array<MenuItem> = [
 const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuItemClick }) => {
 
 	const controls = useAnimation()
-	const [{ headerState }] = useGlobalStateValue();
+	const [{ headerState }, dispatch] = useGlobalStateValue();
 
 	useEffect(() => {
 		if (headerState === headerStates.Wide) {
@@ -55,9 +55,9 @@ const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuI
 			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{ y: activeSectionIndex * 24 }}>
 				<div className='FloatingMenu__ActiveFragment' />
 			</motion.div>
-			<ul>
+			<ul className="'FloatingMenu__list">
 				{sections.map((section: MenuItem) => {
-					return <li key={section.id} className={section.id === activeSectionIndex ? 'active' : ''} onClick={() => onMenuItemClick(section.id)}>{section.name}</li>
+					return <li key={section.id} className={`FloatingMenu__item ${section.id === activeSectionIndex ? 'active' : ''}`} onClick={() => onMenuItemClick(section.id)}>{section.name}</li>
 				})}
 			</ul>
 		</motion.menu>

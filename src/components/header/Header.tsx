@@ -42,7 +42,6 @@ const Header = () => {
 	useEffect(() => scrollY.onChange(y => setIsScrolledDown(y > 1000)), [scrollY])
 
 	// Compute states
-
 	useEffect(() => {
 		if (isScrolledDown) {
 			if (windowWidth < 1200) {
@@ -63,18 +62,45 @@ const Header = () => {
 		}
 	}, [isScrolledDown, windowWidth, dispatch])
 
+	// Events
+	const handleHeaderMouseEnter = () => {
+
+		if (currentVariant === "minimized")
+		{
+			setCurrentVariant("tall")
+			dispatch({type: 'changeHeaderState', newHeaderState: headerStates.Tall})
+		}
+	}
+
+	const handleHeaderMouseLeave = (e: React.MouseEvent) => {
+		//@ts-ignore
+		if (!e.relatedTarget.className.includes("FloatingMenu") && !e.relatedTarget.parentNode.className.includes("FloatingMenu")) {
+			if (currentVariant === "tall")
+			{
+				setCurrentVariant(previousVariant)
+				dispatch({type: 'changeHeaderState', newHeaderState: variantToHeaderState(previousVariant)})
+			}
+		}
+	}
+
 	return (
-		<motion.header className='Header'
+		<React.Fragment>
+			<motion.header className='Header'
 			variants={headerVariants}
 			animate={currentVariant}
 			transition={spring}
-		>
-			<motion.img src={logo} className="Header__logo" alt="logo"
-				variants={logoVariants}
-				animate={currentVariant}
-				transition={spring}
+			>
+				<motion.img src={logo} className="Header__logo" alt="logo"
+					variants={logoVariants}
+					animate={currentVariant}
+					transition={spring}
+				/>
+			</motion.header>
+			<div className='Header__event-zone'
+				onMouseOverCapture={handleHeaderMouseEnter}
+				onMouseOutCapture={handleHeaderMouseLeave}
 			/>
-		</motion.header>
+		</React.Fragment>
 	);
 }
 
