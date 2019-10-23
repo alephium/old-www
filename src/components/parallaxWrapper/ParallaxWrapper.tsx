@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import './ParallaxWrapper.scss';
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
@@ -30,7 +30,6 @@ const ParallaxWrapper: React.FC<ParallaxWrapperProps> = ({ movingSpeed, classNam
 			if (element != null) {
 				setElementTop(window.pageYOffset + element.getBoundingClientRect().top);
 			}
-			console.log(elementTop)
 		}
 	}, [ref, inView]);
 

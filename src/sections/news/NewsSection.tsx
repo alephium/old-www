@@ -53,7 +53,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ pictureUrl, title, desc, link }) =>
 
 	return (
 		<motion.a className='NewsItem' href={link} ref={newsRef} variants={itemVariants} initial="hidden" animate={controls}>
-			<div className='NewsItem__content'>
+			<motion.div className='NewsItem__content' whileHover={{ y: -3, boxShadow: '0 15px 25px rgba(0, 0, 0, 0.08)' }}>
 				<div className='picture__container'>
 					<div className='picture' style={{ backgroundImage: `url(${pictureUrl})`}} />
 				</div>
@@ -61,7 +61,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ pictureUrl, title, desc, link }) =>
 					<h2 className='name'>{title}</h2>
 					<div className='desc'>{desc}</div>
 				</div>
-			</div>
+			</motion.div>
 		</motion.a>
 	)
 }

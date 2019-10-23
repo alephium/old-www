@@ -1,31 +1,8 @@
-import React, { useState, useRef, useLayoutEffect, MouseEvent } from 'react';
+import React from 'react';
 import './TitleSection.scss';
-import { motion, useViewportScroll, useTransform } from "framer-motion"
 import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper';
 
 const TitleSection = () => {
-
-	const [backgroudImageTop, setElementTop] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useViewportScroll();
-
-  const y = useTransform(scrollY, [backgroudImageTop -1, backgroudImageTop + 1], [0, -0.4], {
-    clamp: false
-	});
-
-  useLayoutEffect(() => {
-		const element = ref.current;
-
-		if (element != null) {
-			setElementTop(element.offsetTop);
-		}
-	}, [ref]);
-
-
-	const handleMouseMove = (e: MouseEvent) => {
-		console.log(e.screenX)
-	}
-
 	return (
 		<section className='TitleSection'>
 			<div className='TitleSection__background-fragments'>
@@ -44,7 +21,7 @@ const TitleSection = () => {
 				</div>
 			</div>
 			<ParallaxWrapper className='TitleSection__GetStarted' movingSpeed={-0.4}>
-				<div onMouseMove={handleMouseMove}>
+				<div>
 					<div className='TitleSection__GetStarted__title'>
 						<div className='GetStarted__title__top-label'>Get</div>
 						<div className='GetStarted__title__bottom-label'>Started</div>

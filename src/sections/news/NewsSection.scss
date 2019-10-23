@@ -40,12 +40,9 @@
 		flex-direction: column;
 		border-radius: 25px;
 		overflow: hidden;
-		transition: all ease-in-out 0.2s;
 
 		&:hover {
 			cursor: pointer;
-			box-shadow: 0 15px 20px rgba(0, 0, 0, 0.05);
-			transform: translateY(-5px);
 		}
 	}
 
