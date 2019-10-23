@@ -2,15 +2,50 @@ import React from 'react';
 import './FAQSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import { SectionProps } from '../../App';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
+
+const boxContainerVariants = {
+	hidden: {
+		opacity: 0,
+	},
+  visible: {
+		opacity: 1,
+		transition: {
+			when: "beforeChildren",
+			staggerChildren: 0.2
+		}
+	}
+}
+
+const boxVariants = {
+	hidden: {
+		opacity: 0,
+	},
+  visible: {
+		opacity: 1
+	}
+}
 
 const FAQSection : React.FC<SectionProps> = ({sectionEl}) => {
+	const [sectionRef, inView] = useInView({
+		rootMargin: '-150px 0px',
+		triggerOnce: true
+	})
+
+	const controls = useAnimation()
+
+	if (inView) {
+		controls.start("visible")
+	}
+
 	return (
 		<section className='FAQSection' ref={sectionEl} id="faq">
 			<SectionTitle title='FAQ' label='KNOW EVERYTHING' light />
 			<div className='FAQSection__content_wrapper'>
-				<div className='FAQSection__content'>
+				<motion.div className='FAQSection__content' ref={sectionRef} variants={boxContainerVariants} initial="hidden" animate={controls}>
 					<div className='FAQSection__boxes'>
-						<div className='FAQSection__box'>
+						<motion.div className='FAQSection__box' variants={boxVariants}>
 							<div className='FAQSection__box__qa'>
 								<h1>"How is Alephium different from the other sharding projects?"</h1>
 								<p><b>Alephium is simple, efficient, secure and practical compared to other sharding projects. </b>
@@ -20,8 +55,8 @@ const FAQSection : React.FC<SectionProps> = ({sectionEl}) => {
 								<mark>The elegant design of BlockFlow enables us to implement Alephium much quicker than other projects.</mark>
 								</p>
 							</div>
-						</div>
-						<div className='FAQSection__box'>
+						</motion.div>
+						<motion.div className='FAQSection__box' variants={boxVariants}>
 							<div className='FAQSection__box__qa'>
 								<h1>"How does Alephium support DApps?"</h1>
 								<p>Alephium’s efficient and practical approach to DApps is to combine our <b>token protocol, data protocol, and smart contracts. </b>
@@ -30,10 +65,10 @@ const FAQSection : React.FC<SectionProps> = ({sectionEl}) => {
 									<mark>DApps could benefit very much from our native cross-shard transactions without sacrificing the power of smart contracts.</mark>
 								</p>
 							</div>
-						</div>
+						</motion.div>
 					</div>
 					<div className='FAQSection__boxes'>
-						<div className='FAQSection__box'>
+						<motion.div className='FAQSection__box' variants={boxVariants}>
 							<div className='FAQSection__box__qa'>
 								<h1>"What is the consensus algorithm used in Alephium?"</h1>
 								<p>Alephium’s consensus is one of the core parts of its BlockFlow algorithm.
@@ -41,8 +76,8 @@ const FAQSection : React.FC<SectionProps> = ({sectionEl}) => {
 									<mark>The finality algorithm could be PoW, PoS or any other finality algorithm.</mark> Alephium adopts PoW for the moment as it’s decentralized and secure and has been tested by time with Bitcoin.
 								</p>
 							</div>
-						</div>
-						<div className='FAQSection__box'>
+						</motion.div>
+						<motion.div className='FAQSection__box' variants={boxVariants}>
 							<div className='FAQSection__box__qa'>
 								<h1>"How to solve the single-shard takeover attack?"</h1>
 								<p>BlockFlow exploits a DAG data structure to resolve its shard dependencies.
@@ -51,9 +86,9 @@ const FAQSection : React.FC<SectionProps> = ({sectionEl}) => {
 										<mark>Therefore, Alephium is only vulnerable to 51% attacks.</mark>
 								</p>
 							</div>
-						</div>
+						</motion.div>
 					</div>
-				</div>
+				</motion.div>
 			</div>
 			<div className='FAQSection__background'>
 				<div className='FAQSection__background__image' />
