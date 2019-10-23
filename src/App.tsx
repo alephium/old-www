@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { useInView, InViewHookResponse } from 'react-intersection-observer'
+import { StateProvider, initialState, reducer } from './store/state';
 
 // Components
 import Header from './components/header/Header';
@@ -22,6 +23,8 @@ let previousActiveSectionIndex : number = 0;
 const useInViewParams = {
 	threshold: 0.5
 }
+
+// === App container
 
 const App = () => {
 	const [activeSectionIndex, setActiveSectionIndex] = useState(0)
@@ -101,18 +104,20 @@ const App = () => {
 
   return (
 		<React.StrictMode>
-			<div className="App">
-				<Header />
-				<FloatingMenu activeSectionIndex={activeSectionIndex} onMenuItemClick={scrollSectionIntoView} />
-				<TitleSection />
-				<WhatIsSection sectionEl={IntroSectionRef} />
-				<TechnologyHeader />
-				<CompetitionSection sectionEl={FeaturesSectionRef} />
-				<FAQSection sectionEl={FAQSectionRef} />
-				<RoadmapSection sectionEl={RoadmapSectionRef} />
-				<TeamSection sectionEl={TeamSectionRef} />
-				<NewsSection sectionEl={NewsSectionRef} />
-			</div>
+			<StateProvider initialState={initialState} reducer={reducer}>
+				<div className="App">
+					<Header />
+					<FloatingMenu activeSectionIndex={activeSectionIndex} onMenuItemClick={scrollSectionIntoView} />
+					<TitleSection />
+					<WhatIsSection sectionEl={IntroSectionRef} />
+					<TechnologyHeader />
+					<CompetitionSection sectionEl={FeaturesSectionRef} />
+					<FAQSection sectionEl={FAQSectionRef} />
+					<RoadmapSection sectionEl={RoadmapSectionRef} />
+					<TeamSection sectionEl={TeamSectionRef} />
+					<NewsSection sectionEl={NewsSectionRef} />
+				</div>
+			</StateProvider>
 		</React.StrictMode>
   );
 }

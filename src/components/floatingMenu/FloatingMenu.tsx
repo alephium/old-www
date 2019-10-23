@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './FloatingMenu.scss'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+import { useGlobalStateValue, headerStates } from '../../store/state';
 
-//let yPos: number;
+const menuVariants = {
+	hidden: {
+		x: "-80%"
+	},
+	visible: {
+		x: 0
+	}
+}
 
 interface FloatingMenuProps {
 	activeSectionIndex: number
@@ -24,18 +32,35 @@ const sections: Array<MenuItem> = [
 ]
 
 const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuItemClick }) => {
-	//const siteHeight = document.documentElement.scrollHeight;
+
+	const controls = useAnimation()
+	const [{ headerState }] = useGlobalStateValue();
+
+	useEffect(() => {
+		if (headerState === headerStates.Wide) {
+			controls.start("visible")
+		}
+		else if (headerState === headerStates.Tall) {
+			controls.start("visible")
+		}
+		else if (headerState === headerStates.Minimized)
+		{
+			controls.start("hidden")
+		}
+		console.log(headerState)
+	}, [headerState, controls])
+
 	return (
-		<menu className='FloatingMenu'>
-			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{y: activeSectionIndex * 24}}>
+		<motion.menu className='FloatingMenu' variants={menuVariants} animate={controls}>
+			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{ y: activeSectionIndex * 24 }}>
 				<div className='FloatingMenu__ActiveFragment' />
 			</motion.div>
 			<ul>
-				{ sections.map((section: MenuItem) => {
+				{sections.map((section: MenuItem) => {
 					return <li key={section.id} className={section.id === activeSectionIndex ? 'active' : ''} onClick={() => onMenuItemClick(section.id)}>{section.name}</li>
-				}) }
+				})}
 			</ul>
-		</menu>
+		</motion.menu>
 	);
 }
 

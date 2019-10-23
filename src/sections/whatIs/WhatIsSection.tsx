@@ -9,7 +9,7 @@ import decentralizationIcon from '../../images/icons/decentralization-icon.svg'
 import pragmatismIcon from '../../images/icons/pragmatism-icon.svg'
 import { SectionProps } from '../../App';
 
-const container = {
+const containerVariants = {
 	hidden: {
 		opacity: 0,
 	},
@@ -62,7 +62,7 @@ const WhatIsSection: React.FC<SectionProps> = ({ sectionEl }) => {
 				</div>
 			</div>
 			<div className='WhatIsSection__selling-points__container' ref={sellingPointsContainerRef}>
-				<motion.div className='WhatIsSection__selling-points' variants={container} initial="hidden" animate={controls}>
+				<motion.div className='WhatIsSection__selling-points' variants={containerVariants} initial="hidden" animate={controls}>
 					<SellingPoint key={1} imagePath={scalabilityIcon} title='Scalability' desc='Innovative sharding algorithm supports cross-shard transactions natively for the first time'/>
 					<SellingPoint key={2} imagePath={decentralizationIcon} title='Decentralization' desc='Platform runs in an open, permission-less network securely, like Bitcoin, only vulnerable to 51% attack'/>
 					<SellingPoint key={3} imagePath={pragmatismIcon} title='Pragmatism' desc='Viable and efficient solutions for scaling smart contract and for confidential transactions'/>

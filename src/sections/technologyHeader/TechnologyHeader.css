@@ -31,9 +31,6 @@
 }
 
 @media all and (max-width: 800px) {
-	.TechnologyHeader {
-		padding: 50px 10vw 0px 10vw;
-	}
 
 	.TechnologyHeader__title {
 		font-size: 2.1rem;
