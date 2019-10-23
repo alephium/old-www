@@ -5,6 +5,8 @@ import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import edcon from '../../images/news/edcon.jpg'
 import yahoo from '../../images/news/yahoo.jpg'
 import ethCC from '../../images/news/ethcc.jpg'
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
 
 
 const NewsSection: React.FC<SectionProps> = ({ sectionEl }) => {
@@ -29,9 +31,28 @@ interface NewsItemProps {
 	link: string
 }
 
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
 const NewsItem: React.FC<NewsItemProps> = ({ pictureUrl, title, desc, link }) => {
+	const [newsRef, inView] = useInView({
+		rootMargin: '-200px 0px',
+		triggerOnce: true
+	})
+
+	const controls = useAnimation()
+
+	if (inView) {
+		controls.start("visible")
+	}
+
 	return (
-		<a className='NewsItem' href={link}>
+		<motion.a className='NewsItem' href={link} ref={newsRef} variants={itemVariants} initial="hidden" animate={controls}>
 			<div className='NewsItem__content'>
 				<div className='picture__container'>
 					<div className='picture' style={{ backgroundImage: `url(${pictureUrl})`}} />
@@ -41,7 +62,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ pictureUrl, title, desc, link }) =>
 					<div className='desc'>{desc}</div>
 				</div>
 			</div>
-		</a>
+		</motion.a>
 	)
 }
 
