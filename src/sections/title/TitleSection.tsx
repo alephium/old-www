@@ -1,6 +1,7 @@
 import React, { useState, useRef, useLayoutEffect, MouseEvent } from 'react';
 import './TitleSection.css';
 import { motion, useViewportScroll, useTransform } from "framer-motion"
+import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper';
 
 const TitleSection = () => {
 
@@ -34,7 +35,7 @@ const TitleSection = () => {
 						<span className='TitleSection__BlockFlow__sub-title'>consensus <br /> and scalable protocol</span>
 						<div className='TitleSection__BlockFlow__box'>for massive adoption</div>
 					</div>
-					<motion.div ref={ref} className='TitleSection__Splash__background-image' style={{y, scale: 1.6}} />
+					<ParallaxWrapper className={'TitleSection__Splash__background-image'} movingSpeed={-0.4} style={{scale: 1.6}} />
 				</div>
 			</div>
 			<div className='TitleSection__GetStarted' onMouseMove={handleMouseMove}>
