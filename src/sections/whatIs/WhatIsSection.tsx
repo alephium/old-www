@@ -33,7 +33,7 @@ const item = {
 const WhatIsSection: React.FC<SectionProps> = ({ sectionEl }) => {
 
 	const [sellingPointsContainerRef, inView] = useInView({
-		rootMargin: '-150px 0px',
+		rootMargin: '-450px 0px',
 		triggerOnce: true
 	})
 

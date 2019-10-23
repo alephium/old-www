@@ -4,6 +4,7 @@ import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import { SectionProps } from '../../App';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
+import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper';
 
 const boxContainerVariants = {
 	hidden: {
@@ -90,9 +91,9 @@ const FAQSection : React.FC<SectionProps> = ({sectionEl}) => {
 					</div>
 				</motion.div>
 			</div>
-			<div className='FAQSection__background'>
+			<ParallaxWrapper className='FAQSection__background' movingSpeed={-0.2} style={{ skewY: '-10deg'}}>
 				<div className='FAQSection__background__image' />
-			</div>
+			</ParallaxWrapper>
 		</section>
 	)
 }

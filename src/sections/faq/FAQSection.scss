@@ -66,11 +66,6 @@
 	p > b {
 		color: var(--white);
 	}
-
-	&:hover {
-		transform: scale(1.01);
-		box-shadow: 0 60px 60px rgba(0, 0, 0, 0.15);
-	}
 }
 
 .FAQSection__background {
