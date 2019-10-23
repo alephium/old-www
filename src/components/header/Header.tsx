@@ -47,7 +47,7 @@ const Header = () => {
 			if (windowWidth < 1200) {
 				newVariant = "minimized"
 			} else {
-				newVariant = "tall"
+				newVariant = "minimized" // Use "tall" if you want the menu to appear when scrolling down
 			}
 		} else {
 			newVariant = "wide"
@@ -56,7 +56,6 @@ const Header = () => {
 		if (previousVariant !== newVariant)
 		{
 			setCurrentVariant(newVariant)
-			console.log(variantToHeaderState(newVariant))
 			dispatch({type: 'changeHeaderState', newHeaderState: variantToHeaderState(newVariant)})
 			previousVariant = newVariant
 		}
@@ -74,7 +73,7 @@ const Header = () => {
 
 	const handleHeaderMouseLeave = (e: React.MouseEvent) => {
 		//@ts-ignore
-		if (!e.relatedTarget.className.includes("FloatingMenu") && !e.relatedTarget.parentNode.className.includes("FloatingMenu")) {
+		if (e.relatedTarget && !e.relatedTarget.className.includes("FloatingMenu")) {
 			if (currentVariant === "tall")
 			{
 				setCurrentVariant(previousVariant)

@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './FloatingMenu.scss'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useGlobalStateValue, headerStates } from '../../store/state';
 
 const menuVariants = {
@@ -11,6 +11,25 @@ const menuVariants = {
 		x: 0
 	}
 }
+
+const textVariants = {
+	hidden: {
+		opacity: 0
+	},
+	visible: {
+		opacity: 1
+	}
+}
+
+const bulletVariants = {
+	hidden: {
+		x: 70
+	},
+	visible: {
+		x: 0
+	}
+}
+
 
 interface FloatingMenuProps {
 	activeSectionIndex: number
@@ -33,31 +52,33 @@ const sections: Array<MenuItem> = [
 
 const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuItemClick }) => {
 
-	const controls = useAnimation()
-	const [{ headerState }, dispatch] = useGlobalStateValue();
+	const [{ headerState }] = useGlobalStateValue();
+	const [currentVariant, setCurrentVariant] = useState("visible")
 
 	useEffect(() => {
 		if (headerState === headerStates.Wide) {
-			controls.start("visible")
+			setCurrentVariant("visible")
 		}
 		else if (headerState === headerStates.Tall) {
-			controls.start("visible")
+			setCurrentVariant("visible")
 		}
 		else if (headerState === headerStates.Minimized)
 		{
-			controls.start("hidden")
+			setCurrentVariant("hidden")
 		}
-		console.log(headerState)
-	}, [headerState, controls])
+	}, [headerState, currentVariant])
 
 	return (
-		<motion.menu className='FloatingMenu' variants={menuVariants} animate={controls}>
-			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{ y: activeSectionIndex * 24 }}>
+		<motion.menu className='FloatingMenu' variants={menuVariants} animate={currentVariant}>
+			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{ y: activeSectionIndex * 24, x: currentVariant === "hidden" ? 70 : 0 }}>
 				<div className='FloatingMenu__ActiveFragment' />
 			</motion.div>
 			<ul className="'FloatingMenu__list">
 				{sections.map((section: MenuItem) => {
-					return <li key={section.id} className={`FloatingMenu__item ${section.id === activeSectionIndex ? 'active' : ''}`} onClick={() => onMenuItemClick(section.id)}>{section.name}</li>
+					return <li key={section.id} className={`FloatingMenu__item ${section.id === activeSectionIndex ? 'active' : ''}`} onClick={() => onMenuItemClick(section.id)}>
+						<motion.span variants={bulletVariants} animate={currentVariant} className='FloatingMenu__item__bullet'>•</motion.span>
+						<motion.span variants={textVariants} animate={currentVariant} className='FloatingMenu__item__text'>{section.name}</motion.span>
+					</li>
 				})}
 			</ul>
 		</motion.menu>

@@ -34,6 +34,11 @@
 	}
 }
 
+.FloatingMenu__item__bullet {
+	position: absolute;
+	left: -15px;
+}
+
 .FloatingMenu__ActiveFragment__container {
 	position: absolute;
 	left: -16px;
