@@ -138,18 +138,37 @@
 	
 	.CompetitionSection__table {
 		border-radius: 0;
-		box-shadow: inset -35px 0 50px -25px rgba(0, 0, 0, 0.8);
 		border-right: none;
 		border-left: none;
 		font-size: 0.8rem;
+		position: relative;
+
+		.CompetitionSection__table__scrollable {
+			flex: 5;
+
+			.column {
+				min-width: 80px;
+			}
+		}
 
 		.column {
 			background-color: transparent;
+			min-width: 100px;
 		}
 
 		.cell {
-			padding: 5px;
+			padding: 3px;
 			height: 40px;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			box-shadow: inset -18vw 0 15vw -10vw rgba(0, 0, 0, 0.8);
+			pointer-events: none;
 		}
 	}
 }
