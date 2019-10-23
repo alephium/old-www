@@ -50,7 +50,7 @@
 	max-width: 200px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 
 	text-align: center;
@@ -89,5 +89,11 @@
 	.desc {
 		line-height: 1.3rem;
 		font-size: 0.8rem;
+	}
+}
+
+@media all and (max-width: 800px) {
+	.TeamMember {
+		max-width: 100px;
 	}
 }
