@@ -54,14 +54,17 @@ const textVariants = {
 
 const bulletVariants = {
 	minimized: {
+		display: "block",
 		opacity: 1,
 		x: 70
 	},
 	hidden: {
+		display: "block",
 		x: 0,
 		opacity: 0
 	},
 	visible: {
+		display: "block",
 		opacity: 1,
 		x: 0
 	},

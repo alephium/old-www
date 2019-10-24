@@ -27,7 +27,7 @@ const boxVariants = {
 	}
 }
 
-const FAQSection : React.FC = () => {
+const FAQSection = () => {
 	const [sectionRef, inView] = useInView({
 		rootMargin: '-150px 0px',
 		triggerOnce: true

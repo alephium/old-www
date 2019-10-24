@@ -16,6 +16,7 @@ import RoadmapSection from './sections/roadmap/RoadmapSection';
 import TeamSection from './sections/team/TeamSection';
 import NewsSection from './sections/news/NewsSection';
 import useWindowDimensions from './hooks/windowsDimensions';
+import FooterSection from './sections/footer/FooterSection';
 
 
 // === App container
@@ -75,7 +76,7 @@ const App = () => {
 		{
 			setActiveSectionIndex(sectionIndex)
 		}
-	}, [])
+	}, [activeSectionIndex])
 
   return (
 		<React.StrictMode>
@@ -91,6 +92,7 @@ const App = () => {
 					<MemoizedWatchedSection index={3} SectionNode={RoadmapSection} handleSectionInView={onSectionActive}/>
 					<MemoizedWatchedSection index={4} SectionNode={TeamSection} handleSectionInView={onSectionActive}/>
 					<MemoizedWatchedSection index={5} SectionNode={NewsSection} handleSectionInView={onSectionActive}/>
+					<FooterSection />
 				</div>
 			</StateProvider>
 		</React.StrictMode>
