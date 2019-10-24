@@ -129,7 +129,7 @@ const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuI
 	}
 
 	return (
-		<motion.menu className='FloatingMenu' variants={menuVariants} animate={currentVariant} initial={windowWidth < 800 ? "hidden" : "visible"}>
+		<motion.menu className='FloatingMenu' variants={menuVariants} animate={currentVariant}>
 			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{ y: activeSectionIndex * 24, x: currentVariant === "minimized" ? 70 : 0, display: currentVariant === "fullscreen" ? "none" : "block" }}>
 				<div className='FloatingMenu__ActiveFragment' />
 			</motion.div>

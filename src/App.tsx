@@ -1,7 +1,7 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import './App.css';
-import { useInView, InViewHookResponse } from 'react-intersection-observer'
+import InView from 'react-intersection-observer'
 import { StateProvider, initialState, reducer } from './store/state';
 
 // Components
@@ -17,14 +17,6 @@ import TeamSection from './sections/team/TeamSection';
 import NewsSection from './sections/news/NewsSection';
 import useWindowDimensions from './hooks/windowsDimensions';
 
-export interface SectionProps {
-	sectionEl: InViewHookResponse[0]
-}
-
-let previousActiveSectionIndex : number = 0;
-const useInViewParams = {
-	threshold: 0.5
-}
 
 // === App container
 
@@ -34,42 +26,7 @@ const App = () => {
 	const [activeSectionIndex, setActiveSectionIndex] = useState(0)
 
 	// Views
-	const [IntroSectionRef, IntroInView] = useInView(useInViewParams)
-	const [FeaturesSectionRef, FeaturesInView] = useInView(useInViewParams)
-	const [FAQSectionRef, FAQInView] = useInView(useInViewParams)
-	const [RoadmapSectionRef, RoadmapInView] = useInView(useInViewParams)
-	const [TeamSectionRef, TeamInView] = useInView(useInViewParams)
-	const [NewsSectionRef, NewsInView] = useInView(useInViewParams)
 	const { width: windowWidth } = useWindowDimensions();
-
-	useLayoutEffect(() => {
-		let index : number = previousActiveSectionIndex
-
-		if (IntroInView) {
-			index = 0
-		}
-		if (FeaturesInView) {
-			index = 1
-		}
-		if (FAQInView) {
-			index = 2
-		}
-		if (RoadmapInView) {
-			index = 3
-		}
-		if (TeamInView) {
-			index = 4
-		}
-		if (NewsInView) {
-			index = 5
-		}
-
-		if (activeSectionIndex !== index)
-		{
-			setActiveSectionIndex(index)
-			previousActiveSectionIndex = index
-		}
-	}, [IntroInView, FeaturesInView, FAQInView, RoadmapInView, TeamInView, NewsInView, activeSectionIndex]);
 
 
 	// On menu click, scroll to element
@@ -113,6 +70,13 @@ const App = () => {
 		}
 	}
 
+	const onSectionActive = (sectionIndex: number) => {
+		if (activeSectionIndex !== sectionIndex)
+		{
+			setActiveSectionIndex(sectionIndex)
+		}
+	}
+
   return (
 		<React.StrictMode>
 			<StateProvider initialState={initialState} reducer={reducer}>
@@ -120,17 +84,31 @@ const App = () => {
 					<Header />
 					<FloatingMenu activeSectionIndex={activeSectionIndex} onMenuItemClick={scrollSectionIntoView} />
 					<TitleSection />
-					<WhatIsSection sectionEl={IntroSectionRef} />
+					<WatchedSection index={0} SectionNode={WhatIsSection} handleSectionInView={onSectionActive}/>
 					<TechnologyHeader />
-					<CompetitionSection sectionEl={FeaturesSectionRef} />
-					<FAQSection sectionEl={FAQSectionRef} />
-					<RoadmapSection sectionEl={RoadmapSectionRef} />
-					<TeamSection sectionEl={TeamSectionRef} />
-					<NewsSection sectionEl={NewsSectionRef} />
+					<WatchedSection index={1} SectionNode={CompetitionSection} handleSectionInView={onSectionActive}/>
+					<WatchedSection index={2} SectionNode={FAQSection} handleSectionInView={onSectionActive}/>
+					<WatchedSection index={3} SectionNode={RoadmapSection} handleSectionInView={onSectionActive}/>
+					<WatchedSection index={4} SectionNode={TeamSection} handleSectionInView={onSectionActive}/>
+					<WatchedSection index={5} SectionNode={NewsSection} handleSectionInView={onSectionActive}/>
 				</div>
 			</StateProvider>
 		</React.StrictMode>
   );
+}
+
+interface WatchedSectionProps {
+	index: number
+	handleSectionInView: (sectionIndex: number) => void
+	SectionNode: React.FC
+}
+
+const WatchedSection: React.FC<WatchedSectionProps> = ({ index, handleSectionInView, SectionNode }) => {
+	return (
+		<InView className="Section__wrapper" onChange={(inView) => inView ? handleSectionInView(index) : null} threshold={0.5}>
+			<SectionNode />
+		</InView>
+	)
 }
 
 export default App;

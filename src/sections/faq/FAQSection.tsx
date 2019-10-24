@@ -1,7 +1,6 @@
 import React from 'react';
 import './FAQSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
-import { SectionProps } from '../../App';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
 import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper';
@@ -28,7 +27,7 @@ const boxVariants = {
 	}
 }
 
-const FAQSection : React.FC<SectionProps> = ({sectionEl}) => {
+const FAQSection : React.FC = () => {
 	const [sectionRef, inView] = useInView({
 		rootMargin: '-150px 0px',
 		triggerOnce: true
@@ -41,7 +40,7 @@ const FAQSection : React.FC<SectionProps> = ({sectionEl}) => {
 	}
 
 	return (
-		<section className='FAQSection' ref={sectionEl} id="faq">
+		<section className='FAQSection' id="faq">
 			<SectionTitle title='FAQ' label='KNOW EVERYTHING' light />
 			<div className='FAQSection__content_wrapper'>
 				<motion.div className='FAQSection__content' ref={sectionRef} variants={boxContainerVariants} initial="hidden" animate={controls}>

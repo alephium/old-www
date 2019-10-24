@@ -1,5 +1,4 @@
 import React from 'react'
-import { SectionProps } from '../../App'
 import './RoadmapSection.scss'
 import SectionTitle from '../../components/sectionTitle/SectionTitle'
 import { useInView } from 'react-intersection-observer'
@@ -10,9 +9,9 @@ enum Side {
 	right = 2,
 }
 
-const RoadmapSection: React.FC<SectionProps> = ({ sectionEl }) => {
+const RoadmapSection = () => {
 	return (
-		<section className='RoadmapSection' ref={sectionEl} id="roadmap">
+		<section className='RoadmapSection' id="roadmap">
 			<SectionTitle title='Roadmap' label="WHAT'S UP AHEAD" light />
 			<div className='Roadmap__container'>
 				<div className='Roadmap__line' />

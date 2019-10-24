@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { SectionProps } from '../../App';
 import './NewsSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import edcon from '../../images/news/edcon.jpg'
@@ -9,9 +8,9 @@ import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
 
 
-const NewsSection: React.FC<SectionProps> = ({ sectionEl }) => {
+const NewsSection: React.FC = () => {
 	return (
-		<section className='NewsSection' ref={sectionEl} id="news">
+		<section className='NewsSection' id="news">
 			<SectionTitle title='News' label='MOVING FAST' />
 			<div className='NewsSection__container'>
 				<div className='NewsSection__news-items'>
@@ -52,7 +51,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ pictureUrl, title, desc, link }) =>
 	}
 
 	return (
-		<motion.a className='NewsItem' href={link} ref={newsRef} variants={itemVariants} initial="hidden" animate={controls}>
+		<motion.a className='NewsItem' ref={newsRef} href={link} variants={itemVariants} initial="hidden" animate={controls}>
 			<motion.div className='NewsItem__content' whileHover={{ y: -3, boxShadow: '0 15px 25px rgba(0, 0, 0, 0.08)' }}>
 				<div className='picture__container'>
 					<div className='picture' style={{ backgroundImage: `url(${pictureUrl})`}} />

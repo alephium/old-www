@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { SectionProps } from '../../App';
 import './TeamSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import cheng from '../../images/team/cheng.jpeg'
@@ -14,9 +13,9 @@ import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
 
 
-const TeamSection: React.FC<SectionProps> = ({ sectionEl }) => {
+const TeamSection = () => {
 	return (
-		<section className='TeamSection' ref={ sectionEl } id="team">
+		<section className='TeamSection' id="team">
 			<SectionTitle title='Team' label='OUR TALENTED' />
 			<div className='TeamSection__container'>
 				<div className='TeamSection__team-members member-grid'>

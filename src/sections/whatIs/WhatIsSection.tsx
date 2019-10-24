@@ -7,7 +7,6 @@ import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import scalabilityIcon from '../../images/icons/scalability-icon.svg'
 import decentralizationIcon from '../../images/icons/decentralization-icon.svg'
 import pragmatismIcon from '../../images/icons/pragmatism-icon.svg'
-import { SectionProps } from '../../App';
 import useWindowDimensions from '../../hooks/windowsDimensions';
 
 const containerVariants = {
@@ -34,7 +33,7 @@ const itemVariants = {
   }
 };
 
-const WhatIsSection: React.FC<SectionProps> = ({ sectionEl }) => {
+const WhatIsSection = () => {
 
 	const [sellingPointsContainerRef, inView] = useInView({
 		rootMargin: '-250px 0px',
@@ -52,7 +51,7 @@ const WhatIsSection: React.FC<SectionProps> = ({ sectionEl }) => {
 	}
 
 	return (
-		<section className='WhatIsSection' ref={sectionEl} id="intro">
+		<section className='WhatIsSection' id="intro">
 			<div className='WhatIsSection__description-container'>
 				<SectionTitle label='WHAT IS' title='Alephium?' />
 				<div className='WhatIsSection__content'>

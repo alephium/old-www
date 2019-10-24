@@ -1,6 +1,5 @@
 import React from 'react';
 import './CompetitionSection.scss';
-import { SectionProps } from '../../App';
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
 
@@ -28,7 +27,7 @@ const itemVariants = {
   }
 }
 
-const CompetitionSection: React.FC<SectionProps> = ({ sectionEl }) => {
+const CompetitionSection = () => {
 	const [tableRef, inView] = useInView({
 		rootMargin: '-150px 0px',
 		triggerOnce: true
@@ -41,7 +40,7 @@ const CompetitionSection: React.FC<SectionProps> = ({ sectionEl }) => {
 	}
 
 	return (
-		<section className='CompetitionSection' ref={sectionEl} id="features">
+		<section className='CompetitionSection' id="features">
 			<SectionTitle title='Alephium features' label='COMPETITION VS.' light />
 
 			<div className='CompetitionSection__table-wrapper'>
