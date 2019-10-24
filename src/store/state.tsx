@@ -5,7 +5,9 @@ import React, {createContext, useContext, useReducer, ReactNode, Dispatch} from 
 export enum headerStates {
 	Wide,
 	Tall,
-	Minimized
+	Minimized,
+	Mobile,
+	Fullscreen
 }
 
 export type State = {

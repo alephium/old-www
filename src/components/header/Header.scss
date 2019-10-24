@@ -1,0 +1,43 @@
+$hamburger-padding-x: 0px;
+$hamburger-padding-y: 0px;
+$hamburger-layer-width: 25px;
+$hamburger-layer-height: 3px;
+$hamburger-layer-spacing: 4px;
+
+$hamburger-layer-color: var(--text-color--lighter);
+
+@import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+.Header__event-zone {
+	position: fixed;
+	width: 250px;
+	height: 350px;
+	top: 0;
+	left: 0;
+	z-index: 800;
+}
+
+.Header {
+	display: flex;
+	align-items: flex-start;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 800;
+	background-color: var(--white);
+	overflow: hidden;
+}
+
+.Header__logo {
+	width: 130px;
+	height: 40px;
+	margin-top: 10px;
+}
+
+// Imported from hamburgers package, extended here
+.hamburger {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+}

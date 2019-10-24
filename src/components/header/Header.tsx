@@ -1,25 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import './Header.css';
+import './Header.scss';
 import logo from '../../images/logo-h.svg';
 import { motion, useViewportScroll } from 'framer-motion';
 import useWindowDimensions from '../../hooks/windowsDimensions'
 import { useGlobalStateValue, headerStates } from '../../store/state';
 
+const mobileWidth: number = 800;
+
 const headerVariants = {
-  wide: { width: '240px', borderBottomRightRadius: 20, boxShadow: '0px 0px 0px rgba(0, 0, 0, 0.05)', height: 60 },
-	tall: { width: '180px', borderBottomRightRadius: 20, boxShadow: '0px 15px 15px rgba(0, 0, 0, 0.08)', height: 270},
-	minimized: { width: '45px', borderBottomRightRadius: 20, boxShadow: '0px 15px 15px rgba(0, 0, 0, 0.08)', height: 270},
+  wide: { width: 240, borderBottomRightRadius: 20, boxShadow: '0px 0px 0px rgba(0, 0, 0, 0.05)', height: 60 },
+	tall: { width: 180, borderBottomRightRadius: 20, boxShadow: '0px 15px 15px rgba(0, 0, 0, 0.08)', height: 270 },
+	minimized: { width: 45, borderBottomRightRadius: 20, boxShadow: '0px 15px 15px rgba(0, 0, 0, 0.08)', height: 270 },
+	mobile: { width: 45, height: 110, borderBottomRightRadius: 20, boxShadow: '0px 15px 15px rgba(0, 0, 0, 0.08)' },
+	fullscreen: { width: '100%', height: '100%', borderBottomRightRadius: 0 }
 }
 
 const logoVariants = {
-  wide: { scale: 1, x: 0 },
-	tall: { scale: 0.8, x: -30 },
-	minimized: { scale: 1, x: -35 }
+  wide: { scale: 1, x: 0, marginLeft: 50 },
+	tall: { scale: 0.8, x: -30, marginLeft: 50 },
+	minimized: { scale: 1, x: -35, marginLeft: 50 },
+	mobile: { scale: 1, x: -35, marginLeft: 50 },
+	fullscreen: { scale: 1, x: "calc(50vw - 50%)", marginLeft: 0 }
+}
+
+const hamburgerVariants = {
+	mobile: { top: 75, x: 10 },
+	fullscreen: { top: 22, x: 14 }
 }
 
 const variantToHeaderState = (variantName: string) => {
 	if (variantName === "wide") return headerStates.Wide
 	else if (variantName === "tall") return headerStates.Tall
+	else if (variantName === "mobile") return headerStates.Mobile
+	else if (variantName === "fullscreen") return headerStates.Fullscreen
 	else return headerStates.Minimized
 }
 
@@ -39,12 +52,16 @@ const Header = () => {
 	const [, dispatch] = useGlobalStateValue()
 	const { width: windowWidth } = useWindowDimensions();
 
+	const isMobile = windowWidth < mobileWidth
+
 	useEffect(() => scrollY.onChange(y => setIsScrolledDown(y > 1000)), [scrollY])
 
 	// Compute states
 	useEffect(() => {
 		if (isScrolledDown) {
-			if (windowWidth < 1200) {
+			if (isMobile) {
+				newVariant = "mobile"
+			} else if (windowWidth < 1200) {
 				newVariant = "minimized"
 			} else {
 				newVariant = "minimized" // Use "tall" if you want the menu to appear when scrolling down
@@ -59,12 +76,13 @@ const Header = () => {
 			dispatch({type: 'changeHeaderState', newHeaderState: variantToHeaderState(newVariant)})
 			previousVariant = newVariant
 		}
-	}, [isScrolledDown, windowWidth, dispatch])
+	}, [isScrolledDown, windowWidth, dispatch, isMobile])
 
 	// Events
+
 	const handleHeaderMouseEnter = () => {
 
-		if (currentVariant === "minimized")
+		if (currentVariant === "minimized" && !isMobile)
 		{
 			setCurrentVariant("tall")
 			dispatch({type: 'changeHeaderState', newHeaderState: headerStates.Tall})
@@ -74,16 +92,44 @@ const Header = () => {
 	const handleHeaderMouseLeave = (e: React.MouseEvent) => {
 		//@ts-ignore
 		if (e.relatedTarget && !e.relatedTarget.className.includes("FloatingMenu")) {
-			if (currentVariant === "tall")
+			if (currentVariant === "tall" && !isMobile)
 			{
 				setCurrentVariant(previousVariant)
-				dispatch({type: 'changeHeaderState', newHeaderState: variantToHeaderState(previousVariant)})
+				dispatch({ type: 'changeHeaderState', newHeaderState: variantToHeaderState(previousVariant) })
 			}
+		}
+	}
+
+	const handleHamburgerClick = () => {
+		const targetVariant = currentVariant === "mobile" ? "fullscreen" : "mobile"
+		setCurrentVariant(targetVariant)
+		dispatch({ type: 'changeHeaderState', newHeaderState: variantToHeaderState(targetVariant) })
+	}
+
+	const renderHamburger = () => {
+		if (currentVariant === "mobile" || currentVariant === "fullscreen")
+		{
+			return (
+				<motion.button className={`hamburger hamburger--collapse ${currentVariant === "fullscreen" ? "is-active" : ""}`} type="button"
+					onClick={handleHamburgerClick}
+					variants={hamburgerVariants}
+					animate={currentVariant}
+					transition={spring}
+				>
+					<span className="hamburger-box">
+						<span className="hamburger-inner"></span>
+					</span>
+				</motion.button>
+			)
 		}
 	}
 
 	return (
 		<React.Fragment>
+			<div className='Header__event-zone'
+				onMouseOverCapture={handleHeaderMouseEnter}
+				onMouseOutCapture={handleHeaderMouseLeave}
+			/>
 			<motion.header className='Header'
 			variants={headerVariants}
 			animate={currentVariant}
@@ -94,11 +140,8 @@ const Header = () => {
 					animate={currentVariant}
 					transition={spring}
 				/>
+				{renderHamburger()}
 			</motion.header>
-			<div className='Header__event-zone'
-				onMouseOverCapture={handleHeaderMouseEnter}
-				onMouseOutCapture={handleHeaderMouseLeave}
-			/>
 		</React.Fragment>
 	);
 }
