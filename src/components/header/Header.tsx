@@ -75,15 +75,13 @@ const Header = () => {
 			setCurrentVariant(newVariant)
 			dispatch({type: 'changeHeaderState', newHeaderState: variantToHeaderState(newVariant)})
 			previousVariant = newVariant
-		}
-
-		// Header has been closed by clicking on menu
-		if (globalState.headerState == headerStates.Mobile && currentVariant == "fullscreen")
+		} else if (globalState.headerState === headerStates.Mobile && currentVariant === "fullscreen")
 		{
+			// Header has been closed by clicking on menu
 			setCurrentVariant("mobile")
 			previousVariant = "fullscreen"
 		}
-	}, [isScrolledDown, windowWidth, dispatch, isMobile, globalState])
+	}, [isScrolledDown, windowWidth, dispatch, isMobile, globalState, currentVariant])
 
 	// Events
 
@@ -109,8 +107,9 @@ const Header = () => {
 
 	const handleHamburgerClick = () => {
 		const targetVariant = currentVariant === "mobile" ? "fullscreen" : "mobile"
-		setCurrentVariant(targetVariant)
+		console.log(targetVariant)
 		dispatch({ type: 'changeHeaderState', newHeaderState: variantToHeaderState(targetVariant) })
+		setCurrentVariant(targetVariant)
 	}
 
 	const renderHamburger = () => {

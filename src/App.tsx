@@ -14,6 +14,7 @@ import FAQSection from './sections/faq/FAQSection';
 import RoadmapSection from './sections/roadmap/RoadmapSection';
 import TeamSection from './sections/team/TeamSection';
 import NewsSection from './sections/news/NewsSection';
+import useWindowDimensions from './hooks/windowsDimensions';
 
 export interface SectionProps {
 	sectionEl: InViewHookResponse[0]
@@ -36,6 +37,7 @@ const App = () => {
 	const [RoadmapSectionRef, RoadmapInView] = useInView(useInViewParams)
 	const [TeamSectionRef, TeamInView] = useInView(useInViewParams)
 	const [NewsSectionRef, NewsInView] = useInView(useInViewParams)
+	const { width: windowWidth } = useWindowDimensions();
 
 
 	let index : number = previousActiveSectionIndex
@@ -98,7 +100,11 @@ const App = () => {
 		const element = document.getElementById(elementIdToScrollTo)
 		if (element !== null)
 		{
-			element.scrollIntoView({ behavior: "smooth", block: "center" })
+			if (windowWidth > 800) {
+				element.scrollIntoView({ behavior: "smooth", block: "center" })
+			} else {
+				element.scrollIntoView({ behavior: "smooth", block: "start" })
+			}
 		}
 	}
 

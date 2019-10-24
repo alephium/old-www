@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './FloatingMenu.scss'
 import { motion } from 'framer-motion'
 import { useGlobalStateValue, headerStates } from '../../store/state';
+import useWindowDimensions from '../../hooks/windowsDimensions';
 
 const menuVariants = {
 	minimized: {
+		scale: 1,
 		opacity: 1,
 		x: "-100%"
 	},
@@ -14,6 +16,8 @@ const menuVariants = {
 		display: 'none'
 	},
 	visible: {
+		display: 'block',
+		scale: 1,
 		opacity: 1,
 		x: 0
 	},
@@ -83,10 +87,15 @@ const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuI
 
 	const [{ headerState }, dispatch] = useGlobalStateValue();
 	const [currentVariant, setCurrentVariant] = useState("visible")
+	const { width: windowWidth } = useWindowDimensions();
 
 	useEffect(() => {
 		if (headerState === headerStates.Wide) {
-			setCurrentVariant("visible")
+			if (windowWidth > 800) {
+				setCurrentVariant("visible")
+			} else {
+				setCurrentVariant("hidden")
+			}
 		}
 		else if (headerState === headerStates.Tall) {
 			setCurrentVariant("visible")
@@ -103,7 +112,7 @@ const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuI
 		{
 			setCurrentVariant("fullscreen")
 		}
-	}, [headerState, currentVariant])
+	}, [headerState, currentVariant, windowWidth])
 
 	const handleMenuClick = (index: number) => {
 		onMenuItemClick(index)
@@ -116,7 +125,7 @@ const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuI
 	}
 
 	return (
-		<motion.menu className='FloatingMenu' variants={menuVariants} animate={currentVariant}>
+		<motion.menu className='FloatingMenu' variants={menuVariants} animate={currentVariant} initial={windowWidth < 800 ? "hidden" : "visible"}>
 			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{ y: activeSectionIndex * 24, x: currentVariant === "minimized" ? 70 : 0, display: currentVariant === "fullscreen" ? "none" : "block" }}>
 				<div className='FloatingMenu__ActiveFragment' />
 			</motion.div>
