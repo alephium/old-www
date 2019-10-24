@@ -2,12 +2,9 @@
 	position: fixed;
 	left: 0;
 	top: 90px;
-	/* display: flex; */
-	flex-direction: column;
 	font-weight: 600;
 	font-size: 1rem;
 	padding: 0 0 0 10px;
-	margin: 0 0 0 40px;
 	z-index: 900;
 
 	ul {
@@ -28,7 +25,6 @@
 
 		&.active {
 			color: #FF4957;
-			font-weight: 800;
 		}
 	}
 }
