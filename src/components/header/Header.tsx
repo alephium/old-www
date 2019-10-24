@@ -49,7 +49,7 @@ const Header = () => {
 	const { scrollY } = useViewportScroll();
 	const [isScrolledDown, setIsScrolledDown] = useState(false)
 	const [currentVariant, setCurrentVariant] = useState("wide")
-	const [, dispatch] = useGlobalStateValue()
+	const [globalState, dispatch] = useGlobalStateValue()
 	const { width: windowWidth } = useWindowDimensions();
 
 	const isMobile = windowWidth < mobileWidth
@@ -76,7 +76,14 @@ const Header = () => {
 			dispatch({type: 'changeHeaderState', newHeaderState: variantToHeaderState(newVariant)})
 			previousVariant = newVariant
 		}
-	}, [isScrolledDown, windowWidth, dispatch, isMobile])
+
+		// Header has been closed by clicking on menu
+		if (globalState.headerState == headerStates.Mobile && currentVariant == "fullscreen")
+		{
+			setCurrentVariant("mobile")
+			previousVariant = "fullscreen"
+		}
+	}, [isScrolledDown, windowWidth, dispatch, isMobile, globalState])
 
 	// Events
 

@@ -52,9 +52,3 @@
 	transform: skewY(-10deg);
 	border-radius: 3px;
 }
-
-@media all and (max-width: 800px) {
-	.FloatingMenu {
-		visibility: hidden;
-	}
-}

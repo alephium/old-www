@@ -4,29 +4,58 @@ import { motion } from 'framer-motion'
 import { useGlobalStateValue, headerStates } from '../../store/state';
 
 const menuVariants = {
-	hidden: {
+	minimized: {
+		opacity: 1,
 		x: "-100%"
 	},
+	hidden: {
+		x: 0,
+		opacity: 0,
+		display: 'none'
+	},
 	visible: {
+		opacity: 1,
 		x: 0
+	},
+	fullscreen: {
+		opacity: 1,
+		x: "calc(50vw - 50%)",
+		y: "calc(30vh - 50%)",
+		scale: 2,
+		marginLeft: 0
 	}
 }
 
 const textVariants = {
+	minimized: {
+		opacity: 0
+	},
 	hidden: {
 		opacity: 0
 	},
 	visible: {
 		opacity: 1
+	},
+	fullscreen: {
+		opacity: 1
 	}
 }
 
 const bulletVariants = {
-	hidden: {
+	minimized: {
+		opacity: 1,
 		x: 70
 	},
+	hidden: {
+		x: 0,
+		opacity: 0
+	},
 	visible: {
+		opacity: 1,
 		x: 0
+	},
+	fullscreen: {
+		display: "none"
 	}
 }
 
@@ -52,7 +81,7 @@ const sections: Array<MenuItem> = [
 
 const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuItemClick }) => {
 
-	const [{ headerState }] = useGlobalStateValue();
+	const [{ headerState }, dispatch] = useGlobalStateValue();
 	const [currentVariant, setCurrentVariant] = useState("visible")
 
 	useEffect(() => {
@@ -64,18 +93,36 @@ const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuI
 		}
 		else if (headerState === headerStates.Minimized)
 		{
+			setCurrentVariant("minimized")
+		}
+		else if (headerState === headerStates.Mobile)
+		{
 			setCurrentVariant("hidden")
+		}
+		else if (headerState === headerStates.Fullscreen)
+		{
+			setCurrentVariant("fullscreen")
 		}
 	}, [headerState, currentVariant])
 
+	const handleMenuClick = (index: number) => {
+		onMenuItemClick(index)
+
+		// If mobile, close menu
+		if (currentVariant === "fullscreen") {
+			setCurrentVariant("mobile")
+			dispatch({type: 'changeHeaderState', newHeaderState: headerStates.Mobile})
+		}
+	}
+
 	return (
 		<motion.menu className='FloatingMenu' variants={menuVariants} animate={currentVariant}>
-			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{ y: activeSectionIndex * 24, x: currentVariant === "hidden" ? 70 : 0 }}>
+			<motion.div className='FloatingMenu__ActiveFragment__container' animate={{ y: activeSectionIndex * 24, x: currentVariant === "minimized" ? 70 : 0, display: currentVariant === "fullscreen" ? "none" : "block" }}>
 				<div className='FloatingMenu__ActiveFragment' />
 			</motion.div>
 			<ul className="'FloatingMenu__list">
 				{sections.map((section: MenuItem) => {
-					return <li key={section.id} className={`FloatingMenu__item ${section.id === activeSectionIndex ? 'active' : ''}`} onClick={() => onMenuItemClick(section.id)}>
+					return <li key={section.id} className={`FloatingMenu__item ${section.id === activeSectionIndex ? 'active' : ''}`} onClick={() => handleMenuClick(section.id)}>
 						<motion.span variants={bulletVariants} animate={currentVariant} className='FloatingMenu__item__bullet'>•</motion.span>
 						<motion.span variants={textVariants} animate={currentVariant} className='FloatingMenu__item__text'>{section.name}</motion.span>
 					</li>
