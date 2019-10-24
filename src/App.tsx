@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import './App.css';
 import InView from 'react-intersection-observer'
@@ -23,7 +23,7 @@ import useWindowDimensions from './hooks/windowsDimensions';
 const App = () => {
 	smoothscroll.polyfill()
 
-	const [activeSectionIndex, setActiveSectionIndex] = useState(0)
+	const [activeSectionIndex, setActiveSectionIndex] = useState()
 
 	// Views
 	const { width: windowWidth } = useWindowDimensions();
@@ -70,12 +70,12 @@ const App = () => {
 		}
 	}
 
-	const onSectionActive = (sectionIndex: number) => {
+	const onSectionActive = useCallback((sectionIndex: number) => {
 		if (activeSectionIndex !== sectionIndex)
 		{
 			setActiveSectionIndex(sectionIndex)
 		}
-	}
+	}, [])
 
   return (
 		<React.StrictMode>
@@ -84,13 +84,13 @@ const App = () => {
 					<Header />
 					<FloatingMenu activeSectionIndex={activeSectionIndex} onMenuItemClick={scrollSectionIntoView} />
 					<TitleSection />
-					<WatchedSection index={0} SectionNode={WhatIsSection} handleSectionInView={onSectionActive}/>
+					<MemoizedWatchedSection index={0} SectionNode={WhatIsSection} handleSectionInView={onSectionActive}/>
 					<TechnologyHeader />
-					<WatchedSection index={1} SectionNode={CompetitionSection} handleSectionInView={onSectionActive}/>
-					<WatchedSection index={2} SectionNode={FAQSection} handleSectionInView={onSectionActive}/>
-					<WatchedSection index={3} SectionNode={RoadmapSection} handleSectionInView={onSectionActive}/>
-					<WatchedSection index={4} SectionNode={TeamSection} handleSectionInView={onSectionActive}/>
-					<WatchedSection index={5} SectionNode={NewsSection} handleSectionInView={onSectionActive}/>
+					<MemoizedWatchedSection index={1} SectionNode={CompetitionSection} handleSectionInView={onSectionActive}/>
+					<MemoizedWatchedSection index={2} SectionNode={FAQSection} handleSectionInView={onSectionActive}/>
+					<MemoizedWatchedSection index={3} SectionNode={RoadmapSection} handleSectionInView={onSectionActive}/>
+					<MemoizedWatchedSection index={4} SectionNode={TeamSection} handleSectionInView={onSectionActive}/>
+					<MemoizedWatchedSection index={5} SectionNode={NewsSection} handleSectionInView={onSectionActive}/>
 				</div>
 			</StateProvider>
 		</React.StrictMode>
@@ -110,5 +110,7 @@ const WatchedSection: React.FC<WatchedSectionProps> = ({ index, handleSectionInV
 		</InView>
 	)
 }
+
+const MemoizedWatchedSection = React.memo(WatchedSection)
 
 export default App;

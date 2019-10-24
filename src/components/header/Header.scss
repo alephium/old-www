@@ -21,13 +21,9 @@ $hamburger-layer-color: var(--text-color--lighter);
 	display: flex;
 	align-items: flex-start;
 	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
 	z-index: 800;
 	background-color: var(--white);
 	overflow: hidden;
-	height: 60px;
 }
 
 .Header__logo {

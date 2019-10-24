@@ -10,19 +10,22 @@ const menuVariants = {
 		y: 0,
 		x: "-100%",
 		fontSize: 13,
+		marginLeft: 40
 	},
 	hidden: {
 		x: 0,
 		y: 0,
 		opacity: 0,
-		display: 'none'
+		display: 'none',
+		marginLeft: 40
 	},
 	visible: {
 		display: 'block',
 		fontSize: 13,
 		opacity: 1,
 		y: 0,
-		x: 0
+		x: 0,
+		marginLeft: 40
 	},
 	fullscreen: {
 		display: 'block',
@@ -87,7 +90,7 @@ const sections: Array<MenuItem> = [
 	{ id: 5, name: "News" },
 ]
 
-const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex, onMenuItemClick }) => {
+const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex = 0, onMenuItemClick }) => {
 
 	const [{ headerState }, dispatch] = useGlobalStateValue();
 	const [currentVariant, setCurrentVariant] = useState("visible")
