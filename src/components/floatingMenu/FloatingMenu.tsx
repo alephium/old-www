@@ -6,26 +6,30 @@ import useWindowDimensions from '../../hooks/windowsDimensions';
 
 const menuVariants = {
 	minimized: {
-		scale: 1,
 		opacity: 1,
-		x: "-100%"
+		y: 0,
+		x: "-100%",
+		fontSize: 13,
 	},
 	hidden: {
 		x: 0,
+		y: 0,
 		opacity: 0,
 		display: 'none'
 	},
 	visible: {
 		display: 'block',
-		scale: 1,
+		fontSize: 13,
 		opacity: 1,
+		y: 0,
 		x: 0
 	},
 	fullscreen: {
+		display: 'block',
 		opacity: 1,
 		x: "calc(50vw - 50%)",
 		y: "calc(30vh - 50%)",
-		scale: 2,
+		fontSize: 25,
 		marginLeft: 0
 	}
 }

@@ -96,7 +96,7 @@ const Header = () => {
 
 	const handleHeaderMouseLeave = (e: React.MouseEvent) => {
 		//@ts-ignore
-		if (e.relatedTarget && !e.relatedTarget.className.includes("FloatingMenu")) {
+		if (e.relatedTarget && !e.relatedTarget.className.includes("FloatingMenu") && !e.relatedTarget.className.includes("Header")) {
 			if (currentVariant === "tall" && !isMobile)
 			{
 				setCurrentVariant(previousVariant)

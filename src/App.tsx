@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 import './App.css';
 import { useInView, InViewHookResponse } from 'react-intersection-observer'
 import { StateProvider, initialState, reducer } from './store/state';
@@ -28,6 +29,8 @@ const useInViewParams = {
 // === App container
 
 const App = () => {
+	smoothscroll.polyfill()
+
 	const [activeSectionIndex, setActiveSectionIndex] = useState(0)
 
 	// Views
@@ -39,33 +42,35 @@ const App = () => {
 	const [NewsSectionRef, NewsInView] = useInView(useInViewParams)
 	const { width: windowWidth } = useWindowDimensions();
 
+	useLayoutEffect(() => {
+		let index : number = previousActiveSectionIndex
 
-	let index : number = previousActiveSectionIndex
+		if (IntroInView) {
+			index = 0
+		}
+		if (FeaturesInView) {
+			index = 1
+		}
+		if (FAQInView) {
+			index = 2
+		}
+		if (RoadmapInView) {
+			index = 3
+		}
+		if (TeamInView) {
+			index = 4
+		}
+		if (NewsInView) {
+			index = 5
+		}
 
-	if (IntroInView) {
-		index = 0
-	}
-	if (FeaturesInView) {
-		index = 1
-	}
-	if (FAQInView) {
-		index = 2
-	}
-	if (RoadmapInView) {
-		index = 3
-	}
-	if (TeamInView) {
-		index = 4
-	}
-	if (NewsInView) {
-		index = 5
-	}
+		if (activeSectionIndex !== index)
+		{
+			setActiveSectionIndex(index)
+			previousActiveSectionIndex = index
+		}
+	}, [IntroInView, FeaturesInView, FAQInView, RoadmapInView, TeamInView, NewsInView, activeSectionIndex]);
 
-	if (activeSectionIndex !== index)
-	{
-		setActiveSectionIndex(index)
-		previousActiveSectionIndex = index
-	}
 
 	// On menu click, scroll to element
 	// Make sure to use the correct idea in corresponding sections elements
