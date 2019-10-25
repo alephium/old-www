@@ -10,7 +10,7 @@ interface ParallaxWrapperProps {
 }
 
 const ParallaxWrapper: React.FC<ParallaxWrapperProps> = ({ movingSpeed, className, style, children }) => {
-	const [elementTop, setElementTop] = useState(0);
+	const [elementTop, setElementTop] = useState();
   const ref = useRef<HTMLDivElement>(null);
 	const { scrollY } = useViewportScroll();
 

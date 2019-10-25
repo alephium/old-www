@@ -36,7 +36,7 @@ const itemVariants = {
 const WhatIsSection = () => {
 
 	const [sellingPointsContainerRef, inView] = useInView({
-		rootMargin: '-250px 0px',
+		rootMargin: '0px 0px',
 		triggerOnce: true
 	})
 
