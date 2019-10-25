@@ -1,14 +1,23 @@
 .TeamSection {
-	background-image: url(../../images/hills_background.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
 	min-height: 72vh;
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 5vh;
 
 	position: relative;
+	overflow: hidden;
+}
+
+.TeamSection__background {
+	position: absolute;
+	top: -100px; bottom: -100px;
+	width: 100vw;
+	margin-top: -10vh;
+	background-image: url(../../images/hills_background.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	z-index: -1;
 }
 
 .TeamSection__bottom-image {
@@ -56,6 +65,7 @@
 	text-align: center;
 
 	margin: 28px;
+	z-index: 1;
 
 	.picture__container {
 		height: 80px;
