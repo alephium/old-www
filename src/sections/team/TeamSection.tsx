@@ -9,39 +9,49 @@ import tianfang from '../../images/team/tianfang.jpeg'
 import casey from '../../images/team/casey.png'
 import johannes from '../../images/team/johannes.png'
 import pengL from '../../images/team/peng.png'
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
+import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper';
 
 
-const TeamSection: React.FC = () => {
+const TeamSection = () => {
 	return (
-		<section className='TeamSection'>
+		<section className='TeamSection' id="team">
+			<ParallaxWrapper className='TeamSection__background' movingSpeed={0.2}/>
 			<SectionTitle title='Team' label='OUR TALENTED' />
+			<div className='TeamSection__collaboration-sticker__wrapper' >
+				<div className='TeamSection__collaboration-sticker' >
+					<p>Richeness of collaboration</p>
+					<p>Switzerland and China</p>
+				</div>
+			</div>
 			<div className='TeamSection__container'>
 				<div className='TeamSection__team-members member-grid'>
-					<TeamMember 
+					<TeamMember
 						pictureUrl={cheng}
 						name='Cheng Wang'
 						role='Founder, R&D'
-						desc={<span>Proposed the <a href="https://infoscience.epfl.ch/record/210619/files/main.pdf">first linear time asynchronous Byzantine agreement algorithm.</a></span>} 
+						desc={<span>Proposed the <a href="https://infoscience.epfl.ch/record/210619/files/main.pdf">first linear time asynchronous Byzantine agreement algorithm.</a></span>}
 					/>
-					<TeamMember 
-						pictureUrl={alois} 
+					<TeamMember
+						pictureUrl={alois}
 						name='Alois Cochard'
 						role='Co-founder, CTO'
 						desc='Former CTO of Bestmile SA. Functional hacker.'
 					/>
-					<TeamMember 
-						pictureUrl={yan} 
+					<TeamMember
+						pictureUrl={yan}
 						name='Eric Zhou'
 						role='Co-founder'
 						desc='Co-Founder & Former COO of FClassroom'
 					/>
-					<TeamMember 
+					<TeamMember
 						pictureUrl={peng}
-						name='Peng Cui' 
-						role='Marketing & Operations' 
+						name='Peng Cui'
+						role='Marketing & Operations'
 						desc='Fund Manager at Cybernaut (China) Investment'
 					/>
-					<TeamMember 
+					<TeamMember
 						pictureUrl={tianfang}
 						name='Frederic Peng'
 						role='Marketing & Operations'
@@ -83,16 +93,35 @@ interface TeamMemberProps {
 	desc: ReactNode
 }
 
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
 const TeamMember: React.FC<TeamMemberProps> = ({ pictureUrl, name, role, desc }) => {
+	const [personRef, inView] = useInView({
+		rootMargin: '-200px 0px',
+		triggerOnce: true
+	})
+
+	const controls = useAnimation()
+
+	if (inView) {
+		controls.start("visible")
+	}
+
 	return (
-		<div className='TeamMember'>
+		<motion.div className='TeamMember' ref={personRef} variants={itemVariants} initial="hidden" animate={controls}>
 			<div className='picture__container'>
 				<div className='picture' style={{ backgroundImage: `url(${pictureUrl})`}} />
 			</div>
 			<h2 className='name'>{name}</h2>
 			<h3 className='role'>{role}</h3>
 			<div className='desc'>{desc}</div>
-		</div>
+		</motion.div>
 	)
 }
 

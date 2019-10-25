@@ -1,15 +1,18 @@
 import React from 'react'
 import './RoadmapSection.scss'
 import SectionTitle from '../../components/sectionTitle/SectionTitle'
+import { useInView } from 'react-intersection-observer'
+import { useAnimation, motion } from 'framer-motion'
+import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper'
 
 enum Side {
 	left = 1,
 	right = 2,
 }
 
-const RoadmapSection: React.FC = () => {
+const RoadmapSection = () => {
 	return (
-		<section className='RoadmapSection'>
+		<section className='RoadmapSection' id="roadmap">
 			<SectionTitle title='Roadmap' label="WHAT'S UP AHEAD" light />
 			<div className='Roadmap__container'>
 				<div className='Roadmap__line' />
@@ -47,6 +50,9 @@ const RoadmapSection: React.FC = () => {
 					</RoadmapStep>
 				</div>
 			</div>
+			<ParallaxWrapper className='RoadmapSection__background' movingSpeed={-0.3} style={{ skewY: '10deg'}}>
+				<div className='RoadmapSection__background__image' />
+			</ParallaxWrapper>
 		</section>
 	)
 }
@@ -59,9 +65,28 @@ interface RoadmapStepProps {
 	highlight?: boolean
 }
 
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
 const RoadmapStep: React.FC<RoadmapStepProps> = ({ side, stepNumber, title, done, highlight, children }) => {
+	const [stepRef, inView] = useInView({
+		rootMargin: '-200px 0px',
+		triggerOnce: true
+	})
+
+	const controls = useAnimation()
+
+	if (inView) {
+		controls.start("visible")
+	}
+
 	return (
-		<div className={`RoadmapStep ${Side[side]}`}>
+		<motion.div className={`RoadmapStep ${Side[side]}`} ref={stepRef} variants={itemVariants} initial="hidden" animate={controls}>
 			<div className='content'>
 				<div className='box'>
 					<h1 className='title'>{title}</h1>
@@ -76,7 +101,7 @@ const RoadmapStep: React.FC<RoadmapStepProps> = ({ side, stepNumber, title, done
 				</div>
 			</div>
 			<div className='free-space' />
-		</div>
+		</motion.div>
 	)
 }
 

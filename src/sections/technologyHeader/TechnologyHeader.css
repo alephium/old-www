@@ -1,33 +1,51 @@
 .TechnologyHeader {
 	background-color: var(--background-color--darker);
 	height: 100px;
-	padding: 80px 20vw 60px 20vw;
+	padding: 80px 0 60px 0;
+	width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.TechnologyHeader__title__container {
+	width: 50vw;
+	text-align: center;
+	display: flex;
 	position: relative;
 }
 
-.TechnologyHeader__title {
-	font-size: 3.5rem;
-	color: rgba(104, 49, 231, 0.274);
-	letter-spacing: 25px;
-	z-index: 10;
-	background: url('../../images/city-night.jpg') no-repeat fixed;
-	-webkit-background-clip: text;
-	mix-blend-mode: screen;
-  -moz-background-clip: text;
-  -o-background-clip: text;
-  background-clip: text;
+.TechnologyHeader__title__mask {
+	flex: 1;
+	background: url('../../images/technology-outlines.svg') no-repeat;
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+}
+
+.TechnologyHeader__title__background__wrapper {
+	position: absolute;
+	top: 0; right: 0; left: 0; bottom: 0;
+	margin: 10px;
+	overflow: hidden;
+}
+
+.TechnologyHeader__title__background {
+	right: 0; left: 0;
+	margin-top: -100%;
+	position: absolute;
+	height: 120vh;
+	width: 100%;
+	background: url('../../images/city-night.jpg') no-repeat;
 	background-position: center;
 	background-size: cover;
+	filter: brightness(300%) blur(8px);
+	z-index: 0;
 }
 
 @media all and (max-width: 800px) {
-	.TechnologyHeader {
-		padding: 50px 10vw 0px 10vw;
-	}
-
-	.TechnologyHeader__title {
-		font-size: 2.1rem;
-		letter-spacing: 10px;
-		color: rgba(170, 144, 231, 0.274);
+	.TechnologyHeader__title__container {
+		width: 100vw;
 	}
 }

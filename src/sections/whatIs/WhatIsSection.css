@@ -1,10 +1,9 @@
 .WhatIsSection {
 	flex: 1;
-	background-color: var(--background-color--light);
-	height: 90vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	z-index: 1;
 }
 
 .WhatIsSection .SectionTitle {
@@ -38,6 +37,7 @@
 
 /* Selling points */
 .WhatIsSection__selling-points {
+	min-height: 300px;
 	display: flex;
 	margin: 60px 10vh 100px 10vh;
 }
@@ -56,14 +56,6 @@
 	max-width: 170px;
 	min-width: 140px;
 	margin: 0 20px 0 20px;
-
-	transition: ease-in-out 0.2s;
-}
-
-.SellingPoint:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
-	transition: ease-in-out 0.2s;
 }
 
 .SellingPoint__image {
