@@ -32,6 +32,32 @@
 	opacity: 0.9;
 }
 
+.TeamSection__collaboration-sticker__wrapper {
+	margin-bottom: 40px;
+	margin-top: -30px;
+	display: flex;
+	justify-content: flex-start;
+	padding: 0 20vw 0px 20vw;
+
+	.TeamSection__collaboration-sticker {
+		max-width: 200px;
+		flex: 1;
+		background-color: var(--white);
+		padding: 10px;
+		border-radius: 10px;
+		box-shadow: 0 15px 15px rgba(0, 0, 0, 0.08);
+
+		p {
+			margin: 0;
+			color: var(--text-color--light);
+		}
+		p:last-child {
+			color: var(--alephium-red);
+			font-weight: 800;
+		}
+	}
+}
+
 .TeamSection__container {
 	flex: 1;
 	display: flex;

@@ -13,7 +13,7 @@ const boxContainerVariants = {
 		opacity: 1,
 		transition: {
 			when: "beforeChildren",
-			staggerChildren: 0.1
+			staggerChildren: 0.4
 		}
 	}
 }
@@ -29,7 +29,7 @@ const boxVariants = {
 
 const FAQSection = () => {
 	const [sectionRef, inView] = useInView({
-		rootMargin: '-100px 0px',
+		rootMargin: '-50px 0px',
 		triggerOnce: true
 	})
 
