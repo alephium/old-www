@@ -4,7 +4,6 @@ import './FooterSection.scss';
 const FooterSection = () => {
 	return (
 		<footer className='FooterSection'>
-			<div className='FooterSection__made-in' />
 			<div className='FooterSection__follow-us'>
 				<h1>Follow us on:</h1>
 				<div className='FooterSection__follow-us__networks'>
