@@ -29,7 +29,7 @@ const boxVariants = {
 
 const FAQSection = () => {
 	const [sectionRef, inView] = useInView({
-		rootMargin: '-150px 0px',
+		rootMargin: '-100px 0px',
 		triggerOnce: true
 	})
 

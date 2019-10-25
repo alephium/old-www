@@ -14,9 +14,7 @@ const ParallaxWrapper: React.FC<ParallaxWrapperProps> = ({ movingSpeed, classNam
   const ref = useRef<HTMLDivElement>(null);
 	const { scrollY } = useViewportScroll();
 
-	const [viewRef, inView] = useInView({
-		rootMargin: '0px 0px'
-	})
+	const [viewRef, inView] = useInView()
 
 	const y = useTransform(scrollY, [elementTop -1, elementTop + 1], [0, movingSpeed], {
     clamp: false

@@ -17,7 +17,7 @@ import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper';
 const TeamSection = () => {
 	return (
 		<section className='TeamSection' id="team">
-			<ParallaxWrapper className='TeamSection__background' movingSpeed={-0.2}/>
+			<ParallaxWrapper className='TeamSection__background' movingSpeed={0.2}/>
 			<SectionTitle title='Team' label='OUR TALENTED' />
 			<div className='TeamSection__container'>
 				<div className='TeamSection__team-members member-grid'>

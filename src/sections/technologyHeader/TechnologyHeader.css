@@ -40,6 +40,7 @@
 	background: url('../../images/city-night.jpg') no-repeat;
 	background-position: center;
 	background-size: cover;
+	filter: brightness(300%) blur(8px);
 	z-index: 0;
 }
 

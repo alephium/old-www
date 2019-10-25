@@ -3,6 +3,7 @@ import './RoadmapSection.scss'
 import SectionTitle from '../../components/sectionTitle/SectionTitle'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation, motion } from 'framer-motion'
+import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper'
 
 enum Side {
 	left = 1,
@@ -49,6 +50,9 @@ const RoadmapSection = () => {
 					</RoadmapStep>
 				</div>
 			</div>
+			<ParallaxWrapper className='RoadmapSection__background' movingSpeed={-0.3} style={{ skewY: '10deg'}}>
+				<div className='RoadmapSection__background__image' />
+			</ParallaxWrapper>
 		</section>
 	)
 }
