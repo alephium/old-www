@@ -6,6 +6,7 @@
 	position: relative;
 	display: flex;
 	justify-content: center;
+	overflow: hidden;
 }
 
 .TechnologyHeader__title__container {
@@ -23,11 +24,22 @@
 	z-index: 1;
 }
 
-.TechnologyHeader__title__background {
+.TechnologyHeader__title__background__wrapper {
 	position: absolute;
 	top: 0; right: 0; left: 0; bottom: 0;
 	margin: 10px;
-	background: url('../../images/city-night.jpg') no-repeat fixed;
+	overflow: hidden;
+}
+
+.TechnologyHeader__title__background {
+	right: 0; left: 0;
+	margin-top: -100%;
+	position: absolute;
+	height: 120vh;
+	width: 100%;
+	background: url('../../images/city-night.jpg') no-repeat;
+	background-position: center;
+	background-size: cover;
 	z-index: 0;
 }
 
