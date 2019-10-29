@@ -23,7 +23,8 @@ const RoadmapSection = () => {
 						title='Zero'
 						done
 					>
-						Cheng proposed the first linear-time asynchronous Byzantine agreement algorithm.
+						Cheng proposed the first linear-time asynchronous Byzantine agreement algorithm. &nbsp;
+						<a href="https://infoscience.epfl.ch/record/210619/files/main.pdf">Pdf</a>
 					</RoadmapStep>
 					<RoadmapStep
 						side={Side.right}
@@ -31,7 +32,8 @@ const RoadmapSection = () => {
 						done
 						title='Natural'
 					>
-						Cheng completed the research of BlockFlow algorithm for practical sharding protocol.
+						Cheng completed the research of BlockFlow algorithm for practical sharding protocol. &nbsp;
+						<a href="https://www.alephium.org/docs/white-paper.pdf">Pdf</a>
 					</RoadmapStep>
 					<RoadmapStep
 						side={Side.left}
@@ -39,7 +41,8 @@ const RoadmapSection = () => {
 						done
 						title='Real'
 					>
-						The team implemented the Alpha version of the core sharding protocol and tested on AWS.
+						The team implemented the Alpha version of the core sharding protocol and tested on AWS. &nbsp;
+						<a href="https://www.youtube.com/watch?v=lasTOXkMr1k">Demo</a>
 					</RoadmapStep>
 					<RoadmapStep
 						side={Side.right}
