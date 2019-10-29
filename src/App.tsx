@@ -42,18 +42,15 @@ const App = () => {
 				elementIdToScrollTo = "intro"
 				break;
 			case 1:
-				elementIdToScrollTo = "features"
-				break;
-			case 2:
 				elementIdToScrollTo = "faq"
 				break;
-			case 3:
+			case 2:
 				elementIdToScrollTo = "roadmap"
 				break;
-			case 4:
+			case 3:
 				elementIdToScrollTo = "team"
 				break;
-			case 5:
+			case 4:
 				elementIdToScrollTo = "news"
 				break;
 			default:
@@ -87,7 +84,6 @@ const App = () => {
 					<TitleSection />
 					<MemoizedWatchedSection index={0} SectionNode={WhatIsSection} handleSectionInView={onSectionActive}/>
 					<TechnologyHeader />
-					<MemoizedWatchedSection index={1} SectionNode={CompetitionSection} handleSectionInView={onSectionActive}/>
 					<MemoizedWatchedSection index={2} SectionNode={FAQSection} handleSectionInView={onSectionActive}/>
 					<MemoizedWatchedSection index={3} SectionNode={RoadmapSection} handleSectionInView={onSectionActive}/>
 					<MemoizedWatchedSection index={4} SectionNode={TeamSection} handleSectionInView={onSectionActive}/>

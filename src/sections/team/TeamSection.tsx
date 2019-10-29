@@ -3,6 +3,7 @@ import './TeamSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import cheng from '../../images/team/cheng.jpeg'
 import alois from '../../images/team/alois.jpeg'
+import mika from '../../images/team/mika.jpeg'
 import yan from '../../images/team/yan.jpeg'
 import peng from '../../images/team/peng.jpeg'
 import tianfang from '../../images/team/tianfang.jpeg'
@@ -29,15 +30,21 @@ const TeamSection = () => {
 					/>
 					<TeamMember
 						pictureUrl={alois}
-						name='Alois Cochard'
+						name='Aloïs Cochard'
 						role='Co-founder, CTO'
 						desc='Former CTO of Bestmile SA. Functional hacker.'
 					/>
 					<TeamMember
-						pictureUrl={yan}
-						name='Eric Zhou'
-						role='Co-founder'
-						desc='Co-Founder & Former COO of FClassroom'
+						pictureUrl={mika}
+						name='Mikaël Vaivre'
+						role='Product'
+						desc='Former head of product for Lykke corp, a Swiss quality crypto exchange'
+					/>
+					<TeamMember
+						pictureUrl={pengL}
+						name='Peng Liu'
+						role='Advisor, Marketing'
+						desc='IFlyTek Vice President; Computational Advertising Expert'
 					/>
 					<TeamMember
 						pictureUrl={peng}
@@ -69,10 +76,10 @@ const TeamSection = () => {
 							desc='Co-Founder of Bitcoin Suisse AG'
 						/>
 						<TeamMember
-							pictureUrl={pengL}
-							name='Peng Liu'
-							role='IFlyTek Vice President'
-							desc='Computational Advertising Expert'
+							pictureUrl={yan}
+							name='Eric Zhou'
+							role='Co-founder'
+							desc='Co-Founder & Former COO of FClassroom'
 						/>
 				</div>
 			</div>

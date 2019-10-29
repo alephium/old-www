@@ -46,7 +46,7 @@ const FAQSection = () => {
 				<motion.div className='FAQSection__content' ref={sectionRef} variants={boxContainerVariants} initial="hidden" animate={controls}>
 					<div className='FAQSection__boxes'>
 						<FAQBox
-							question='"How is Alephium different from the other sharding projects?"'
+							question='How is Alephium different from the other sharding projects?'
 							answer={
 								<p><b>Alephium is simple, efficient, secure and practical compared to other sharding projects. </b>
 									Its core sharding algorithm BlockFlow has the <b>same minimal network assumptions as Bitcoin. </b>
@@ -57,7 +57,7 @@ const FAQSection = () => {
 							}
 						/>
 						<FAQBox
-							question='"How does Alephium support DApps?"'
+							question='How does Alephium support DApps?'
 							answer={
 								<p>Alephium’s efficient and practical approach to DApps is to combine our <b>token protocol, data protocol, and smart contracts. </b>
 									Token protocol and data protocol are naturally scaled to all shards.
@@ -69,19 +69,19 @@ const FAQSection = () => {
 					</div>
 					<div className='FAQSection__boxes'>
 						<FAQBox
-							question='"What is the consensus algorithm used in Alephium?"'
+							question='What is the consensus algorithm used in Alephium?'
 							answer={
 								<p>Alephium’s consensus is one of the core parts of its BlockFlow algorithm.
 									<b> BlockFlow exploits a DAG data structure</b> to resolve its shard dependencies and then uses a finality algorithm to achieve consensus for all shards.
-									<mark>The finality algorithm could be PoW, PoS or any other finality algorithm.</mark> Alephium adopts PoW for the moment as it’s decentralized and secure and has been tested by time with Bitcoin.
+									<mark>The finality algorithm could be PoW, PoS or any other finality algorithm.</mark>Alephium adopts PoW for the moment as it’s decentralized and secure and has been tested by time with Bitcoin.
 								</p>
 							}
 						/>
 						<FAQBox
-							question='"How to solve the single-shard takeover attack?"'
+							question='How to solve the single-shard takeover attack?'
 							answer={
 								<p>BlockFlow exploits a DAG data structure to resolve its shard dependencies.
-									<b>As a result, mining works from all shards are accumulated into every new block. </b>
+									<b> As a result, mining works from all shards are accumulated into every new block. </b>
 									If an attacker wants to reorg a block in one shard, he must attack the blocks on the other shards that depend on this block.
 									<mark>Therefore, Alephium is only vulnerable to 51% attacks.</mark>
 								</p>
