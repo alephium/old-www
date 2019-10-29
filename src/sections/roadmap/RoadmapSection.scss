@@ -126,6 +126,10 @@
 
 				&.wip {
 					background-color: #11E388;
+
+					.notification-bubble__icon {
+						background-image: url('../../images/icons/wip.svg');
+					}
 				}
 
 				&.highlight {

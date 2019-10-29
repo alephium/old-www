@@ -31,7 +31,7 @@ const RoadmapSection = () => {
 						done
 						title='Natural'
 					>
-						Cheng completed the initial research of BlockFlow algorithm.
+						Cheng completed the research of BlockFlow algorithm for practical sharding protocol.
 					</RoadmapStep>
 					<RoadmapStep
 						side={Side.left}
