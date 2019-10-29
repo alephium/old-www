@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from 'react';
-import smoothscroll from 'smoothscroll-polyfill';
 import './App.css';
 import InView from 'react-intersection-observer'
 import { StateProvider, initialState, reducer } from './store/state';
@@ -17,12 +16,12 @@ import NewsSection from './sections/news/NewsSection';
 import useWindowDimensions from './hooks/windowsDimensions';
 import FooterSection from './sections/footer/FooterSection';
 
+//@ts-ignore
+IntersectionObserver.prototype.POLL_INTERVAL = 100
 
 // === App container
 
 const App = () => {
-	smoothscroll.polyfill()
-
 	const [activeSectionIndex, setActiveSectionIndex] = useState()
 
 	// Views

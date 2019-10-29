@@ -107,7 +107,6 @@ const Header = () => {
 
 	const handleHamburgerClick = () => {
 		const targetVariant = currentVariant === "mobile" ? "fullscreen" : "mobile"
-		console.log(targetVariant)
 		dispatch({ type: 'changeHeaderState', newHeaderState: variantToHeaderState(targetVariant) })
 		setCurrentVariant(targetVariant)
 	}
