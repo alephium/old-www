@@ -1,6 +1,7 @@
 import React from 'react';
 import './TitleSection.scss';
 import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper';
+import { motion } from 'framer-motion';
 
 const TitleSection = () => {
 	return (
@@ -27,13 +28,28 @@ const TitleSection = () => {
 						<div className='GetStarted__title__bottom-label'>Started</div>
 					</div>
 					<div className='TitleSection__button-list'>
-						<a href="https://www.alephium.org/docs/white-paper.pdf"><button className='TitleSection__button'>Technical paper</button></a>
-						<a href="https://www.alephium.org/docs/Onepage.pdf"><button className='TitleSection__button'>One pager</button></a>
+						<GetStartedButton title="Technical paper" link="https://www.alephium.org/docs/white-paper.pdf" />
+						<GetStartedButton title="One pager" link="https://www.alephium.org/docs/Onepage.pdf" />
 					</div>
 				</div>
 			</ParallaxWrapper>
 		</section>
 	);
+}
+
+interface GetStartedButtonProps {
+	title: string
+	link: string
+}
+
+const GetStartedButton: React.FC<GetStartedButtonProps> = ({ title, link }) => {
+	return (
+		<motion.button className='TitleSection__button' whileHover={{ y: -3, boxShadow: '0 15px 25px rgba(0, 0, 0, 0.08)', backgroundColor: "rgb(174, 54, 255)" }}>
+			<a href={link}>
+					{title}
+			</a>
+		</motion.button>
+	)
 }
 
 export default TitleSection;

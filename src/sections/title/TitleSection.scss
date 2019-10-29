@@ -10,7 +10,6 @@
 	overflow: hidden;
 	width: 50vw;
 	height: 38vh;
-	transition: ease-in-out 0.4s;
 	border-radius: 5vh;
 	margin: auto;
 	margin-top: 15vh;
@@ -111,34 +110,20 @@
 	border-radius: 12px;
 	height: 40px;
 	margin-bottom: 20px;
-	transition: all ease-in-out 0.4s;
 	padding: 0;
-	background: var(--alephium-red);
+	background-color: var(--alephium-red);
 	overflow: hidden;
 	position: relative;
+
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
 }
 
-.TitleSection__button:hover {
-	transform: translateY(-1.5px);
-	transition: all ease-in-out 0.2s;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-	background-position:100px;
-}
-
-.TitleSection__button:before {
-	background-image: linear-gradient(210deg, var(--gradient1) 0%, var(--alephium-red) 100%);
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	opacity: 0;
-	z-index: -100;
-	transition: ease-in-out 0.2s;
-}
-
-.TitleSection__button:hover:before {
-	opacity: 1;
-}
 
 /* Background fragments */
 
