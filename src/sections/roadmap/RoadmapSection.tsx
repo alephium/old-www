@@ -19,34 +19,51 @@ const RoadmapSection = () => {
 				<div className='Roadmap'>
 					<RoadmapStep
 						side={Side.left}
-						stepNumber={1}
-						title='2018 Q2 - Q4'
+						stepNumber={0}
+						title='Zero'
 						done
 					>
-						The Alpha version including the core BlockFlow algorithm was implemented. <a href='https://www.youtube.com/watch?v=lasTOXkMr1k'>Alpha version tested on AWS achieving > 10K TPS</a>
+						Cheng proposed the first linear-time asynchronous Byzantine agreement algorithm.
 					</RoadmapStep>
 					<RoadmapStep
 						side={Side.right}
-						stepNumber={2}
+						stepNumber={1}
 						done
-						title='2019 Q1 - Q3'
+						title='Natural'
 					>
-						Alephium's testnet 1.0 will be released with beta applications for participants.
+						Cheng completed the initial research of BlockFlow algorithm.
 					</RoadmapStep>
 					<RoadmapStep
 						side={Side.left}
-						stepNumber={3}
-						title='2019 Q4 - 2020 Q1'
+						stepNumber={2}
+						done
+						title='Real'
 					>
-						The testnet would be further enhanced with performance, security, and protocol improments.
+						The team implemented the Alpha version of the core sharding protocol and tested on AWS.
 					</RoadmapStep>
 					<RoadmapStep
 						side={Side.right}
+						stepNumber={3}
+						title='Complex'
+						wip
+					>
+						A TestNet will be launched for testing, improving, and auditing.
+					</RoadmapStep>
+					<RoadmapStep
+						side={Side.left}
 						stepNumber={4}
-						title='After Pre-A Funding'
+						title='Aleph 1.0'
 						highlight
 					>
-						The initial <mark>main net</mark> will be released.
+						The MainNet version one will be launched.
+					</RoadmapStep>
+					<RoadmapStep
+						side={Side.right}
+						stepNumber={5}
+						title='Aleph 2.0'
+						highlight
+					>
+						The MainNet will be upgraded with smart contract support.
 					</RoadmapStep>
 				</div>
 			</div>
@@ -62,6 +79,7 @@ interface RoadmapStepProps {
 	stepNumber: number
 	title: string
 	done?: boolean
+	wip?: boolean
 	highlight?: boolean
 }
 
@@ -73,7 +91,7 @@ const itemVariants = {
   }
 }
 
-const RoadmapStep: React.FC<RoadmapStepProps> = ({ side, stepNumber, title, done, highlight, children }) => {
+const RoadmapStep: React.FC<RoadmapStepProps> = ({ side, stepNumber, title, done, wip, highlight, children }) => {
 	const [stepRef, inView] = useInView({
 		rootMargin: '-200px 0px',
 		triggerOnce: true
@@ -95,7 +113,7 @@ const RoadmapStep: React.FC<RoadmapStepProps> = ({ side, stepNumber, title, done
 				<div className='link'/>
 				<div className='number-box'>
 					<div className='number'>{stepNumber}</div>
-					<div className={`notification-bubble ${done ? 'done' : ''} ${highlight ? 'highlight' : ''}`}>
+					<div className={`notification-bubble ${done ? 'done' : ''} ${wip ? 'wip' : ''} ${highlight ? 'highlight' : ''}`}>
 						<div className='notification-bubble__icon' />
 					</div>
 				</div>

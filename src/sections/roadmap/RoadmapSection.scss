@@ -124,6 +124,10 @@
 					}
 				}
 
+				&.wip {
+					background-color: #11E388;
+				}
+
 				&.highlight {
 					background-color: var(--alephium-red);
 
