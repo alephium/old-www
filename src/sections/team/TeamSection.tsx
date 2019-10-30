@@ -43,7 +43,7 @@ const TeamSection = () => {
 					<TeamMember
 						pictureUrl={pengL}
 						name='Peng Liu'
-						role='Advisor, Marketing'
+						role='Research & Marketing'
 						desc='IFlyTek Vice President; Computational Advertising Expert'
 					/>
 					<TeamMember
@@ -70,16 +70,16 @@ const TeamSection = () => {
 							desc={<span>Eth 1.x <a href="https://ethereum-magicians.org/t/ethereum-1-dot-x-a-half-baked-roadmap-for-mainnet-improvements">roadmap</a><br/>Eth 2 <a href="https://ethresear.ch/t/phase-one-and-done-eth2-as-a-data-availability-engine/5269">"Phase one and done"</a></span>}
 						/>
 						<TeamMember
-							pictureUrl={johannes}
-							name='Johannes Schweifer'
-							role='Founder, R&D'
-							desc='Co-Founder of Bitcoin Suisse AG'
-						/>
-						<TeamMember
 							pictureUrl={yan}
 							name='Eric Zhou'
 							role='Co-founder'
 							desc='Co-Founder & Former COO of FClassroom'
+						/>
+						<TeamMember
+							pictureUrl={johannes}
+							name='Johannes Schweifer'
+							role='Founder, R&D'
+							desc='Co-Founder of Bitcoin Suisse AG'
 						/>
 				</div>
 			</div>
