@@ -44,7 +44,7 @@ const TeamSection = () => {
 						pictureUrl={pengL}
 						name='Peng Liu'
 						role='Research & Marketing'
-						desc='IFlyTek Vice President; Computational Advertising Expert'
+						desc='iFlytek Vice President; Computational Advertising Expert'
 					/>
 					<TeamMember
 						pictureUrl={peng}
