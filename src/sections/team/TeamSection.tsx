@@ -3,11 +3,14 @@ import './TeamSection.scss';
 import SectionTitle from '../../components/sectionTitle/SectionTitle';
 import cheng from '../../images/team/cheng.jpeg'
 import alois from '../../images/team/alois.jpeg'
+import polto from '../../images/team/polto.png'
+import droxler from '../../images/team/droxler.jpeg'
 import mika from '../../images/team/mika.jpeg'
 import yan from '../../images/team/yan.jpeg'
 import peng from '../../images/team/peng.jpeg'
 import tianfang from '../../images/team/tianfang.jpeg'
 import casey from '../../images/team/casey.png'
+import yessin from '../../images/team/yessin.jpeg'
 import johannes from '../../images/team/johannes.png'
 import pengL from '../../images/team/peng.png'
 import { useInView } from 'react-intersection-observer';
@@ -26,13 +29,19 @@ const TeamSection = () => {
 						pictureUrl={cheng}
 						name='Cheng Wang'
 						role='Founder, R&D'
-						desc={<span>Proposed the <a href="https://infoscience.epfl.ch/record/210619/files/main.pdf">first linear time asynchronous Byzantine agreement algorithm.</a></span>}
+						desc={<span>Proposed the <a href="https://infoscience.epfl.ch/record/210619/files/main.pdf">first linear time asynchronous Byzantine agreement algorithm</a></span>}
 					/>
 					<TeamMember
 						pictureUrl={alois}
 						name='Aloïs Cochard'
 						role='Co-founder, CTO'
-						desc='Former CTO of Bestmile SA. Functional hacker.'
+						desc='Former CTO of Bestmile SA. Functional hacker'
+					/>
+					<TeamMember
+						pictureUrl={polto}
+						name='Alexandre Poltorak'
+						role='Strategy & Community'
+						desc='Key account manager of Bity. Open source practitioner'
 					/>
 					<TeamMember
 						pictureUrl={mika}
@@ -40,6 +49,14 @@ const TeamSection = () => {
 						role='Product'
 						desc='Former head of product for Lykke corp, a Swiss quality crypto exchange'
 					/>
+					<TeamMember
+						pictureUrl={droxler}
+						name='Thomas Droxler'
+						role='Senior Software Engineer'
+						desc='Senior backend engineer of Bestmile'
+					/>
+					</div>
+				<div className='TeamSection__team-members member-grid'>
 					<TeamMember
 						pictureUrl={pengL}
 						name='Peng Liu'
@@ -70,6 +87,14 @@ const TeamSection = () => {
 							desc={<span>Eth 1.x <a href="https://ethereum-magicians.org/t/ethereum-1-dot-x-a-half-baked-roadmap-for-mainnet-improvements">roadmap</a><br/>Eth 2 <a href="https://ethresear.ch/t/phase-one-and-done-eth2-as-a-data-availability-engine/5269">"Phase one and done"</a></span>}
 						/>
 						<TeamMember
+							pictureUrl={yessin}
+							name='yessin schiegg'
+							role='Crypto Advisor'
+							desc='Advisor of Ethereum, Web3, Near'
+						/>
+					</div>
+					<div className='TeamSection__advisors member-grid'>
+						<TeamMember
 							pictureUrl={yan}
 							name='Eric Zhou'
 							role='Co-founder'
@@ -81,7 +106,7 @@ const TeamSection = () => {
 							role='Founder, R&D'
 							desc='Co-Founder of Bitcoin Suisse AG'
 						/>
-				</div>
+					</div>
 			</div>
 		</section>
 	)
