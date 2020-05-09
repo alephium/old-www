@@ -38,6 +38,12 @@ const TeamSection = () => {
 						desc='Former CTO of Bestmile SA. Functional hacker'
 					/>
 					<TeamMember
+						pictureUrl={droxler}
+						name='Thomas Droxler'
+						role='Senior Software Engineer'
+						desc='Senior backend engineer of Bestmile'
+					/>
+					<TeamMember
 						pictureUrl={polto}
 						name='Alexandre Poltorak'
 						role='Strategy & Community'
@@ -48,12 +54,6 @@ const TeamSection = () => {
 						name='Mikaël Vaivre'
 						role='Product'
 						desc='Former head of product for Lykke corp, a Swiss quality crypto exchange'
-					/>
-					<TeamMember
-						pictureUrl={droxler}
-						name='Thomas Droxler'
-						role='Senior Software Engineer'
-						desc='Senior backend engineer of Bestmile'
 					/>
 					</div>
 				<div className='TeamSection__team-members member-grid'>
