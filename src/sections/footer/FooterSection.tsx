@@ -14,7 +14,7 @@ const FooterSection = () => {
 				</div>
 			</div>
 			<div className='FooterSection__copyright'>
-				<span>© 2019 Alephium, All rights reserved</span>
+				<span>© 2020 Alephium, All rights reserved</span>
 			</div>
 		</footer>
 	)
