@@ -7,7 +7,6 @@ import polto from '../../images/team/polto.png'
 import droxler from '../../images/team/droxler.jpeg'
 import mika from '../../images/team/mika.jpeg'
 import yan from '../../images/team/yan.jpeg'
-import peng from '../../images/team/peng.jpeg'
 import tianfang from '../../images/team/tianfang.jpeg'
 import casey from '../../images/team/casey.png'
 import yessin from '../../images/team/yessin.jpeg'
@@ -62,12 +61,6 @@ const TeamSection = () => {
 						name='Peng Liu'
 						role='Research & Marketing'
 						desc='iFlytek Vice President; Computational Advertising Expert'
-					/>
-					<TeamMember
-						pictureUrl={peng}
-						name='Peng Cui'
-						role='Marketing & Operations'
-						desc='Fund Manager at Cybernaut (China) Investment'
 					/>
 					<TeamMember
 						pictureUrl={tianfang}
