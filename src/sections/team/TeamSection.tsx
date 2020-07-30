@@ -10,7 +10,6 @@ import yan from '../../images/team/yan.jpeg'
 import tianfang from '../../images/team/tianfang.jpeg'
 import casey from '../../images/team/casey.png'
 import yessin from '../../images/team/yessin.jpeg'
-import johannes from '../../images/team/johannes.png'
 import pengL from '../../images/team/peng.png'
 import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
