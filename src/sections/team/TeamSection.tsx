@@ -85,19 +85,11 @@ const TeamSection = () => {
 							role='Crypto Advisor'
 							desc='Advisor of Ethereum, Web3, Near'
 						/>
-					</div>
-					<div className='TeamSection__advisors member-grid'>
 						<TeamMember
 							pictureUrl={yan}
 							name='Eric Zhou'
 							role='Co-founder'
 							desc='Co-Founder & Former COO of FClassroom'
-						/>
-						<TeamMember
-							pictureUrl={johannes}
-							name='Johannes Schweifer'
-							role='Founder, R&D'
-							desc='Co-Founder of Bitcoin Suisse AG'
 						/>
 					</div>
 			</div>
