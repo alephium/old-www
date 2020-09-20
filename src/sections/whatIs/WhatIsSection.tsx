@@ -58,13 +58,13 @@ const WhatIsSection = () => {
 					<div className='WhatIsSection__content__logo' />
 					<div className='WhatIsSection__content__text'>
 						<p>
-							Scalability and DeFi security are two well-known challenges in current crypto space.
+							Scalability and DeFi security are two well-known challenges in the current crypto space.
 							Alephium is a novel sharded blockchain resolving these two issues empowered by BlockFlow algorithm and extended UTXO model.
 						</p>
 						<p>
 							The platform is built on sound innovations to combine and improve
 							the mature ideas that have been tested on Bitcoin and Ethereum.
-							The team focuses on the delivery of a secure, scalable and open financial platform that will work for today.
+							The team focuses on the delivery of a secure, scalable, and open financial platform that will work for today.
 						</p>
 					</div>
 				</div>
@@ -72,7 +72,7 @@ const WhatIsSection = () => {
 			<div className='WhatIsSection__selling-points__container' ref={sellingPointsContainerRef}>
 				<motion.div className='WhatIsSection__selling-points' variants={containerVariants} initial="hidden" animate={controls}>
 					<SellingPoint key={1} imagePath={scalabilityIcon} title='Scalability' desc='Innovative sharding algorithm supports single-step xshard transactions for the first time' isMobile={isMobile}/>
-					<SellingPoint key={2} imagePath={decentralizationIcon} title='DeFi Security' desc='Tokens are first class citizen and contracts are safer due to new transaction model and virtual machine' isMobile={isMobile}/>
+					<SellingPoint key={2} imagePath={decentralizationIcon} title='DeFi Security' desc='Tokens are first-class citizen and contracts are safer due to new transaction model and virtual machine' isMobile={isMobile}/>
 					<SellingPoint key={3} imagePath={pragmatismIcon} title='Pragmatism' desc='Innovation based on the mature and battle-tested ideas from Bitcoin and Ethereum' isMobile={isMobile}/>
 				</motion.div>
 			</div>
