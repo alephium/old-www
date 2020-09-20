@@ -87,7 +87,7 @@ const TeamSection = () => {
 						<TeamMember
 							pictureUrl={yan}
 							name='Eric Zhou'
-							role='Co-founder'
+							role='Crypto Advisor'
 							desc='Co-Founder & Former COO of FClassroom'
 						/>
 					</div>

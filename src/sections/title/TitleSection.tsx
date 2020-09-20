@@ -15,8 +15,8 @@ const TitleSection = () => {
 				<div className='TitleSection__Splash'>
 					<ParallaxWrapper className='TitleSection__BlockFlow' movingSpeed={0.2} style={{ skewY: "10deg"}}>
 						<span className='TitleSection__BlockFlow__title'>BlockFlow</span>
-						<span className='TitleSection__BlockFlow__sub-title'>Fully decentralized, sharded consensus protocol<br />with maximum composability</span>
-						<div className='TitleSection__BlockFlow__box'>for massive adoption</div>
+						<span className='TitleSection__BlockFlow__sub-title'>Alephium is a sharded blockchain to make programmable money<br />scalable and secure</span>
+						<div className='TitleSection__BlockFlow__box'>For massive adoption</div>
 					</ParallaxWrapper>
 					<ParallaxWrapper className={'TitleSection__Splash__background-image'} movingSpeed={0.6} style={{scale: 1.6}} />
 				</div>

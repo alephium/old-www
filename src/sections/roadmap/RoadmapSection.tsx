@@ -23,7 +23,7 @@ const RoadmapSection = () => {
 						title='Zero'
 						done
 					>
-						Cheng proposed the first linear-time asynchronous Byzantine agreement algorithm. &nbsp;
+						Cheng proposed the first linear-time asynchronous Byzantine consensus algorithm. &nbsp;
 						<a target="_blank" rel="noopener noreferrer" href="https://infoscience.epfl.ch/record/210619/files/main.pdf">Pdf</a>
 					</RoadmapStep>
 					<RoadmapStep
@@ -50,23 +50,15 @@ const RoadmapSection = () => {
 						title='Complex'
 						wip
 					>
-						A TestNet will be launched for testing, improving, and auditing.
+						TestNet version will be released for testing, improving, and auditing.
 					</RoadmapStep>
 					<RoadmapStep
 						side={Side.left}
 						stepNumber={4}
-						title='Aleph 1.0'
+						title='Alephium'
 						highlight
 					>
-						The MainNet version one will be launched.
-					</RoadmapStep>
-					<RoadmapStep
-						side={Side.right}
-						stepNumber={5}
-						title='Aleph 2.0'
-						highlight
-					>
-						The MainNet will be upgraded with smart contract support.
+						The MainNet will be launched.
 					</RoadmapStep>
 				</div>
 			</div>
