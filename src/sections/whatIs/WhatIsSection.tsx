@@ -59,7 +59,7 @@ const WhatIsSection = () => {
 					<div className='WhatIsSection__content__text'>
 						<p>
 							Scalability and DeFi security are two well-known challenges in the current crypto space.
-							Alephium is a novel sharded blockchain resolving these two issues empowered by BlockFlow algorithm and extended UTXO model.
+							Alephium is a novel sharded blockchain resolving these two issues empowered by BlockFlow algorithm and stateful UTXO model.
 						</p>
 						<p>
 							The platform is built on sound innovations to combine and improve
