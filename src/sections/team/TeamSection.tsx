@@ -6,10 +6,6 @@ import alois from '../../images/team/alois.jpeg'
 import polto from '../../images/team/polto.png'
 import droxler from '../../images/team/droxler.jpeg'
 import mika from '../../images/team/mika.jpeg'
-import yan from '../../images/team/yan.jpeg'
-import tianfang from '../../images/team/tianfang.jpeg'
-import casey from '../../images/team/casey.png'
-import yessin from '../../images/team/yessin.jpeg'
 import pengL from '../../images/team/peng.png'
 import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
@@ -53,44 +49,13 @@ const TeamSection = () => {
 						role='Product'
 						desc='Former head of product for Lykke corp, a Swiss quality crypto exchange'
 					/>
-					</div>
-				<div className='TeamSection__team-members member-grid'>
 					<TeamMember
 						pictureUrl={pengL}
 						name='Peng Liu'
 						role='Research & Marketing'
 						desc='iFlytek Vice President; Computational Advertising Expert'
 					/>
-					<TeamMember
-						pictureUrl={tianfang}
-						name='Frederic Peng'
-						role='Marketing & Operations'
-						desc='Vice-president of Blockchain Association of Tsinghua Students'
-					/>
-					</div>
-					<div className='TeamSection__teams-separator'>
-						<h1 className='team-title'>Advisors</h1>
-					</div>
-					<div className='TeamSection__advisors member-grid'>
-						<TeamMember
-							pictureUrl={casey}
-							name='Casey Detrio'
-							role='Ethereum Core Developer'
-							desc={<span>Eth 1.x <a href="https://ethereum-magicians.org/t/ethereum-1-dot-x-a-half-baked-roadmap-for-mainnet-improvements">roadmap</a><br/>Eth 2 <a href="https://ethresear.ch/t/phase-one-and-done-eth2-as-a-data-availability-engine/5269">"Phase one and done"</a></span>}
-						/>
-						<TeamMember
-							pictureUrl={yessin}
-							name='yessin schiegg'
-							role='Crypto Advisor'
-							desc='Advisor of Ethereum, Web3, Near'
-						/>
-						<TeamMember
-							pictureUrl={yan}
-							name='Eric Zhou'
-							role='Crypto Advisor'
-							desc='Co-Founder & Former COO of FClassroom'
-						/>
-					</div>
+				</div>
 			</div>
 		</section>
 	)
