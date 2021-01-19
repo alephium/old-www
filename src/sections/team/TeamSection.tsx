@@ -6,7 +6,7 @@ import alois from '../../images/team/alois.jpeg'
 import polto from '../../images/team/polto.png'
 import droxler from '../../images/team/droxler.jpeg'
 import mika from '../../images/team/mika.jpeg'
-import pengL from '../../images/team/peng.png'
+import casey from '../../images/team/casey.png'
 import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
 import ParallaxWrapper from '../../components/parallaxWrapper/ParallaxWrapper';
@@ -16,44 +16,44 @@ const TeamSection = () => {
 	return (
 		<section className='TeamSection' id="team">
 			<ParallaxWrapper className='TeamSection__background' movingSpeed={0.2}/>
-			<SectionTitle title='Team' label='OUR TALENTED' />
+			<SectionTitle title='Team & Advisors' label='OUR TALENTED' />
 			<div className='TeamSection__container'>
 				<div className='TeamSection__team-members member-grid'>
 					<TeamMember
 						pictureUrl={cheng}
 						name='Cheng Wang'
-						role='Founder, R&D'
+						role='Core Dev, Founder'
 						desc={<span>Proposed the <a href="https://infoscience.epfl.ch/record/210619/files/main.pdf">first linear time asynchronous Byzantine agreement algorithm</a></span>}
 					/>
 					<TeamMember
 						pictureUrl={alois}
 						name='Aloïs Cochard'
-						role='Co-founder, CTO'
-						desc='Former CTO of Bestmile SA. Functional hacker'
+						role='Core Dev'
+						desc={<span>Former CTO of Bestmile SA<br/>Functional hacker</span>}
 					/>
 					<TeamMember
 						pictureUrl={droxler}
 						name='Thomas Droxler'
-						role='Senior Software Engineer'
+						role='Core Dev'
 						desc='Senior backend engineer of Bestmile'
+					/>
+					<TeamMember
+						pictureUrl={mika}
+						name='Mikaël Vaivre'
+						role='Product, UI/UX'
+						desc='Former head of product for Lykke corp, a Swiss quality crypto exchange'
 					/>
 					<TeamMember
 						pictureUrl={polto}
 						name='Alexandre Poltorak'
 						role='Strategy & Community'
-						desc='Key account manager of Bity. Open source practitioner'
+						desc={<span>Key account manager of Bity<br/>Open source practitioner</span>}
 					/>
 					<TeamMember
-						pictureUrl={mika}
-						name='Mikaël Vaivre'
-						role='Product'
-						desc='Former head of product for Lykke corp, a Swiss quality crypto exchange'
-					/>
-					<TeamMember
-						pictureUrl={pengL}
-						name='Peng Liu'
-						role='Research & Marketing'
-						desc='iFlytek Vice President; Computational Advertising Expert'
+						pictureUrl={casey}
+						name='Casey Detrio'
+						role='Research Advisor'
+						desc={<span>Ethereum Core Dev<br/>Eth 1.x <a href="https://ethereum-magicians.org/t/ethereum-1-dot-x-a-half-baked-roadmap-for-mainnet-improvements">roadmap</a><br/>Eth 2 <a href="https://ethresear.ch/t/phase-one-and-done-eth2-as-a-data-availability-engine/5269">"Phase one and done"</a></span>}
 					/>
 				</div>
 			</div>
