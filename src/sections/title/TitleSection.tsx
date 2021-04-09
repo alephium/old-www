@@ -28,8 +28,8 @@ const TitleSection = () => {
 						<div className='GetStarted__title__bottom-label'>Started</div>
 					</div>
 					<div className='TitleSection__button-list'>
-						<GetStartedButton title="Technical paper" link="https://www.alephium.org/docs/white-paper.pdf" />
-						<GetStartedButton title="One pager" link="https://www.alephium.org/docs/Onepage.pdf" />
+						<GetStartedButton title="Technical paper" link="https://github.com/alephium/research/raw/master/alephium.pdf" />
+						<GetStartedButton title="One pager" link="https://github.com/alephium/www/raw/master/docs/Onepage.pdf" />
 					</div>
 				</div>
 			</ParallaxWrapper>
