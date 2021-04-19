@@ -35,7 +35,7 @@ const TeamSection = () => {
 						pictureUrl={droxler}
 						name='Thomas Droxler'
 						role='Core Dev'
-						desc='Senior backend engineer of Bestmile'
+						desc='Former senior backend engineer of Bestmile'
 					/>
 					<TeamMember
 						pictureUrl={mika}
@@ -47,7 +47,7 @@ const TeamSection = () => {
 						pictureUrl={polto}
 						name='Alexandre Poltorak'
 						role='Strategy & Community'
-						desc={<span>Key account manager of Bity<br/>Open source practitioner</span>}
+						desc={<span>Co-founder at hodling.ch<br/>Former key account manager of Bity</span>}
 					/>
 					<TeamMember
 						pictureUrl={casey}
