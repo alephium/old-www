@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "08173bb2777a4fed4b85d13f916514ef",
+    "revision": "094785ce4af691fbe6065109c4ade2bb",
     "url": "./index.html"
   },
   {
-    "revision": "3272e49108629870c710",
-    "url": "./static/css/main.5ff65ac3.chunk.css"
+    "revision": "351088fff8aec689aace",
+    "url": "./static/css/main.269fb8f7.chunk.css"
   },
   {
     "revision": "e4279640bc9dac40269b",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/js/2.31a7d342.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3272e49108629870c710",
-    "url": "./static/js/main.40bb1947.chunk.js"
+    "revision": "351088fff8aec689aace",
+    "url": "./static/js/main.83ddced8.chunk.js"
   },
   {
     "revision": "2af99f3bd05cc9f7ceec",
@@ -68,6 +68,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/decentralization-icon.ed92f5d5.svg"
   },
   {
+    "revision": "7594b796fb440fa1ef63ca65f6b59c55",
+    "url": "./static/media/discord.7594b796.svg"
+  },
+  {
     "revision": "e31899f6e902d840c9a46e88ea4418fe",
     "url": "./static/media/droxler.e31899f6.jpeg"
   },
@@ -80,8 +84,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/ethcc.34c342ab.jpg"
   },
   {
+    "revision": "51f42ec568eb2bdbc734ad787f2ae037",
+    "url": "./static/media/facebook.51f42ec5.svg"
+  },
+  {
     "revision": "713df90639263ed880009da7ecba2524",
     "url": "./static/media/hills_background.713df906.jpg"
+  },
+  {
+    "revision": "5b238434e2862c877f08572b96c0ef7b",
+    "url": "./static/media/linkedin.5b238434.svg"
   },
   {
     "revision": "a9af87f7df21c46ba358e8f636b97952",
@@ -112,6 +124,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/pragmatism-icon.567cb02d.svg"
   },
   {
+    "revision": "45bc938650217ad4f6d0ec0884f0aa6c",
+    "url": "./static/media/reddit.45bc9386.svg"
+  },
+  {
     "revision": "290cd484c40c8f875f2877cbf92fb418",
     "url": "./static/media/scalability-icon.290cd484.svg"
   },
@@ -134,10 +150,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "923455be1f667836547cad3dc57148eb",
     "url": "./static/media/twitter.923455be.svg"
-  },
-  {
-    "revision": "a873919317d224d3ab1cd2017123de91",
-    "url": "./static/media/weibo.a8739193.svg"
   },
   {
     "revision": "4e54929d4b9517a0771c32485a953d72",

@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.5ff65ac3.chunk.css",
-    "main.js": "./static/js/main.40bb1947.chunk.js",
-    "main.js.map": "./static/js/main.40bb1947.chunk.js.map",
+    "main.css": "./static/css/main.269fb8f7.chunk.css",
+    "main.js": "./static/js/main.83ddced8.chunk.js",
+    "main.js.map": "./static/js/main.83ddced8.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.d01979d8.js",
     "runtime-main.js.map": "./static/js/runtime-main.d01979d8.js.map",
     "static/js/2.31a7d342.chunk.js": "./static/js/2.31a7d342.chunk.js",
     "static/js/2.31a7d342.chunk.js.map": "./static/js/2.31a7d342.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.77d619ce4bed7ee486d6a5e981c7fa2d.js": "./precache-manifest.77d619ce4bed7ee486d6a5e981c7fa2d.js",
+    "precache-manifest.1da852455ca66ccd1c6fcb699afc12b4.js": "./precache-manifest.1da852455ca66ccd1c6fcb699afc12b4.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.5ff65ac3.chunk.css.map": "./static/css/main.5ff65ac3.chunk.css.map",
+    "static/css/main.269fb8f7.chunk.css.map": "./static/css/main.269fb8f7.chunk.css.map",
     "static/js/2.31a7d342.chunk.js.LICENSE.txt": "./static/js/2.31a7d342.chunk.js.LICENSE.txt",
     "static/media/index.css": "./static/media/Poppins-SemiBold.5542c28b.otf",
     "static/media/alois.jpeg": "./static/media/alois.9ba0ea7b.jpeg",
@@ -20,12 +20,12 @@
     "static/media/TeamSection.scss": "./static/media/hills_background.713df906.jpg",
     "static/media/FAQSection.scss": "./static/media/city-night.f9b43fa5.jpg",
     "static/media/decentralization-icon.svg": "./static/media/decentralization-icon.ed92f5d5.svg",
+    "static/media/FooterSection.scss": "./static/media/twitter.923455be.svg",
     "static/media/droxler.jpeg": "./static/media/droxler.e31899f6.jpeg",
     "static/media/edcon.jpg": "./static/media/edcon.85b21957.jpg",
     "static/media/ethcc.jpg": "./static/media/ethcc.34c342ab.jpg",
     "static/media/logo-h.svg": "./static/media/logo-h.a9af87f7.svg",
     "static/media/WhatIsSection.css": "./static/media/logo-in-rounded-box.172d01cd.svg",
-    "static/media/FooterSection.scss": "./static/media/weibo.a8739193.svg",
     "static/media/mika.jpeg": "./static/media/mika.2019972e.jpeg",
     "static/media/TitleSection.scss": "./static/media/milky-way.c906a7f5.jpg",
     "static/media/polto.png": "./static/media/polto.92463e6e.png",
@@ -37,7 +37,7 @@
   "entrypoints": [
     "static/js/runtime-main.d01979d8.js",
     "static/js/2.31a7d342.chunk.js",
-    "static/css/main.5ff65ac3.chunk.css",
-    "static/js/main.40bb1947.chunk.js"
+    "static/css/main.269fb8f7.chunk.css",
+    "static/js/main.83ddced8.chunk.js"
   ]
 }
