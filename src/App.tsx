@@ -11,7 +11,6 @@ import FloatingMenu from './components/floatingMenu/FloatingMenu';
 import TechnologyHeader from './sections/technologyHeader/TechnologyHeader';
 import FAQSection from './sections/faq/FAQSection';
 import RoadmapSection from './sections/roadmap/RoadmapSection';
-import TeamSection from './sections/team/TeamSection';
 import NewsSection from './sections/news/NewsSection';
 import useWindowDimensions from './hooks/windowsDimensions';
 import FooterSection from './sections/footer/FooterSection';
@@ -84,8 +83,7 @@ const App = () => {
 					<TechnologyHeader />
 					<MemoizedWatchedSection index={1} SectionNode={FAQSection} handleSectionInView={onSectionActive}/>
 					<MemoizedWatchedSection index={2} SectionNode={RoadmapSection} handleSectionInView={onSectionActive}/>
-					<MemoizedWatchedSection index={3} SectionNode={TeamSection} handleSectionInView={onSectionActive}/>
-					<MemoizedWatchedSection index={4} SectionNode={NewsSection} handleSectionInView={onSectionActive}/>
+					<MemoizedWatchedSection index={3} SectionNode={NewsSection} handleSectionInView={onSectionActive}/>
 					<FooterSection />
 				</div>
 			</StateProvider>
