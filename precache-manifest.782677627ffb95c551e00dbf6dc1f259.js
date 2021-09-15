@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "094785ce4af691fbe6065109c4ade2bb",
+    "revision": "9f982844e1d4f6f030bb63e0fd234ee6",
     "url": "./index.html"
   },
   {
-    "revision": "351088fff8aec689aace",
-    "url": "./static/css/main.269fb8f7.chunk.css"
+    "revision": "9a56e433b788567bc61a",
+    "url": "./static/css/main.8be352df.chunk.css"
   },
   {
-    "revision": "e4279640bc9dac40269b",
-    "url": "./static/js/2.31a7d342.chunk.js"
+    "revision": "09ebaa6203a4405f8fcb",
+    "url": "./static/js/2.7a2d4ac2.chunk.js"
   },
   {
     "revision": "501f379103cbfcb5ff11211dd39a28a2",
-    "url": "./static/js/2.31a7d342.chunk.js.LICENSE.txt"
+    "url": "./static/js/2.7a2d4ac2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "351088fff8aec689aace",
-    "url": "./static/js/main.83ddced8.chunk.js"
+    "revision": "9a56e433b788567bc61a",
+    "url": "./static/js/main.4f58c343.chunk.js"
   },
   {
     "revision": "2af99f3bd05cc9f7ceec",
@@ -40,24 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Poppins-SemiBold.5542c28b.otf"
   },
   {
-    "revision": "9ba0ea7ba52bdbb3b3c33ba891fc0396",
-    "url": "./static/media/alois.9ba0ea7b.jpeg"
-  },
-  {
-    "revision": "1892eb75d407b9a79e38c8065097b721",
-    "url": "./static/media/casey.1892eb75.png"
-  },
-  {
     "revision": "63427d54e0c53fdfe0f1509782761264",
     "url": "./static/media/checkmark.63427d54.svg"
-  },
-  {
-    "revision": "fbb141a7f3f043f46e97ccab672fb8b2",
-    "url": "./static/media/cheng.fbb141a7.jpeg"
-  },
-  {
-    "revision": "b427d8830f55c4f9f08a57dc536814a1",
-    "url": "./static/media/china-swiss.b427d883.png"
   },
   {
     "revision": "f9b43fa57bddbf8853e805b05be5f956",
@@ -72,10 +56,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/discord.7594b796.svg"
   },
   {
-    "revision": "e31899f6e902d840c9a46e88ea4418fe",
-    "url": "./static/media/droxler.e31899f6.jpeg"
-  },
-  {
     "revision": "85b219571c8ec9a534c67c47b16692a5",
     "url": "./static/media/edcon.85b21957.jpg"
   },
@@ -86,10 +66,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "51f42ec568eb2bdbc734ad787f2ae037",
     "url": "./static/media/facebook.51f42ec5.svg"
-  },
-  {
-    "revision": "713df90639263ed880009da7ecba2524",
-    "url": "./static/media/hills_background.713df906.jpg"
   },
   {
     "revision": "5b238434e2862c877f08572b96c0ef7b",
@@ -108,16 +84,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/medium.38004ce1.svg"
   },
   {
-    "revision": "2019972eab75da9a706f1825a8724436",
-    "url": "./static/media/mika.2019972e.jpeg"
-  },
-  {
     "revision": "c906a7f5750004a936ddc11ee17fc544",
     "url": "./static/media/milky-way.c906a7f5.jpg"
-  },
-  {
-    "revision": "92463e6e9f1f4a18a52668efca766fcb",
-    "url": "./static/media/polto.92463e6e.png"
   },
   {
     "revision": "567cb02d744392bde429258bdc00f7b6",
