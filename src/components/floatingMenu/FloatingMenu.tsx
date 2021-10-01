@@ -88,8 +88,7 @@ const sections: Array<MenuItem> = [
 	{ id: 0, name: "Intro" },
 	{ id: 1, name: "FAQ" },
 	{ id: 2, name: "Roadmap" },
-	{ id: 3, name: "Team" },
-	{ id: 4, name: "News" },
+	{ id: 3, name: "News" },
 ]
 
 const FloatingMenu: React.FC<FloatingMenuProps> = ({ activeSectionIndex = 0, onMenuItemClick }) => {

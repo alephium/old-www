@@ -45,9 +45,6 @@ const App = () => {
 				elementIdToScrollTo = "roadmap"
 				break;
 			case 3:
-				elementIdToScrollTo = "team"
-				break;
-			case 4:
 				elementIdToScrollTo = "news"
 				break;
 			default:
